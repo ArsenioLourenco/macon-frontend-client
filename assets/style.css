@@ -136,3 +136,9 @@ small {
   line-height: 19px;
   color: #1C1C1C;
 }
+
+#nav_consultar{
+  font-family: Roboto;
+  font-style: normal;
+  color: #FCFCFC;
+}
