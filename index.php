@@ -17,11 +17,12 @@
   <link rel="stylesheet" href="./assets/style.css">
   <style>
 
+
   </style>
 </head>
 
 <body>
-  <div class="container t-1 p-3">
+  <div class="container t-1 p-4">
     <div class="row">
       <div class="col colu_1">
         <div class="logotype">
@@ -40,7 +41,7 @@
                 <input type="text" name="idTravel" id="idTravel" class="form-control ipts" required>
 
                 <small>Destino*</small>
-                <input type="text" name="idTravel" id="idTravel" class="form-control ipts" width="450px" required>
+                <input type="text" name="idTravel" id="idTravel" class="form-control ipts" width="450px" required="">
 
                 <small>Data de Partida*</small>
                 <input type="date" name="idTravel" id="idTravel" class="form-control ipts" width="450px" required>
@@ -48,8 +49,7 @@
                 <small>Data de Chegada*</small>
                 <input type="date" name="idTravel" id="idTravel" class="form-control ipts" width="450px" required>
 
-                <button type="submit" class="t-2 form-control text-center" id="consultTravel">
-                  <a href="MACON-FRONT-END/pesquisa.php"></a>
+                <button type="submit" class="t-2 form-control text-center" id="consultTravel" name="consultTravel" data-bs-toggle="modal" data-bs-target="#modalPesquisa">
                   <span id="search">
                     <!-- <img src="./assets/icons/search.png" class="rounded float-start" alt="search"> -->
                   </span>
@@ -60,6 +60,64 @@
           </div>
         </div>
       </div>
+
+      <!-- Modal Pesquisa -->
+
+<div class="modal fade" id="modalPesquisa" tabindex="-1" aria-labelledby="modalPesquisa" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalPesquisa">Resultados da Pesquisa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <section class="bg-light p-0">
+    <h3 class="pb-2">Resultado da Pesquisa</h3>
+    <div class="table-responsive" id="no-more-tables">
+      <table class="table bg-white">
+        <thead class="bg-primary text-black">
+          <tr>
+            <th>Partida</th>
+            <th>Destino</th>
+            <th>Horário</th>
+            <th>Data</th>
+            <th>Preço</th>
+            <th>Marcar Viagem</th>
+          </tr>
+          
+        </thead>
+        <tbody>
+          <tr>
+            <td data-title="Partida">000522</td>
+            <td data-title="Destino">00547</td>
+            <td data-title="Horário">10:45</td>
+            <td data-title="Data">18:55</td>
+            <td data-title="Preço">Benfica</td>
+            <td data-title="Marcar Viagem"><button id="btn-marcar" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">Marcar</button></td>
+          </tr>
+          <tr>
+            <td data-title="Partida">000522</td>
+            <td data-title="Destino">00547</td>
+            <td data-title="Horário">10:45</td>
+            <td data-title="Data">18:55</td>
+            <td data-title="Preço">Benfica</td>
+            <td data-title="Marcar Viagem"><button id="btn-marcar" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">Marcar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Agendar Viagem</button>
+      </div>
+    </div>
+  </div>
+</div>
 
       <div class="col p-3">
         <p>
@@ -100,9 +158,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Agende Aqui Sua Viagem</h5>
-        </div>
-        <div class="modal-body">
-          <div class="row">
+        </div><div class="row">
             <div class="col">
               <form>
                 <small>Trajecto*</small>
@@ -129,6 +185,8 @@
                 <input type="submit" name="idTravel" id="AgendTravelBtn" class="form-control iptsAgend" width="450px"
                   value="Agendar Viagem" required>
               </form>
+        <div class="modal-body">
+          
             </div>
             <div class="col">
               <img src="./assets/gif/agendTravel.gif" alt="agendTravel" class="agendTravel">
