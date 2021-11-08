@@ -38,18 +38,18 @@
               <hr style="background-color: #368ED6; ">
               <div class="teste p-2">
                 <small>Origem*</small>
-                <input type="text" name="idTravel" id="idTravel" class="form-control ipts" required>
+                <input type="text" name="origem" id="origem" class="form-control ipts" required>
 
                 <small>Destino*</small>
-                <input type="text" name="idTravel" id="idTravel" class="form-control ipts" width="450px" required="">
+                <input type="text" name="destino" id="destino" class="form-control ipts" width="450px" required="">
 
                 <small>Data de Partida*</small>
-                <input type="date" name="idTravel" id="idTravel" class="form-control ipts" width="450px" required>
+                <input type="date" name="partida" id="partida" class="form-control ipts" width="450px" required>
 
                 <small>Data de Chegada*</small>
-                <input type="date" name="idTravel" id="idTravel" class="form-control ipts" width="450px" required>
+                <input type="date" name="regresso" id="regresso" class="form-control ipts" width="450px" required>
 
-                <button type="submit" class="t-2 form-control text-center" id="consultTravel" name="consultTravel" data-bs-toggle="modal" data-bs-target="#modalPesquisa">
+                <button type="submit" class="t-2 form-control text-center" id="submit" name="consultTravel" data-bs-toggle="modal" data-bs-target="#modalPesquisa">
                   <span id="search">
                     <!-- <img src="./assets/icons/search.png" class="rounded float-start" alt="search"> -->
                   </span>
@@ -210,22 +210,20 @@
 <script type="text/javascript">
   $(document).ready(function() {
 
-
       $('#submit').click(function(e){
         e.preventDefault();
 
-
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var msg_subject = $("#msg_subject").val();
-        var message = $("#message").val();
+        var localOrigem = $("#origem").val();
+        var localDestino = $("#destino").val();
+        var dataPartida  = $("#partida").val();
+        var dataRegresso = $("#regresso").val();
 
 
         $.ajax({
-            type: "POST",
-            url: "/formProcess.php",
+            type: "GET",
+            url: "localhost:6800/travels",
             dataType: "json",
-            data: {name:name, email:email, msg_subject:msg_subject, message:message},
+            data: {originProvince:localOrigem, destinyProvince:localDestino, departureDate:dataPartida, returnDate:dataRegresso},
             success : function(data){
                 if (data.code == "200"){
                     alert("Success: " +data.msg);
@@ -240,7 +238,5 @@
       });
   });
 </script>
-
-
 
 </html>
