@@ -36,7 +36,7 @@
           <div class="col-12 p-5">
             <nav class="navbar navbar-light bg-primary">
               <div class="container-fluid">
-                <a class="navbar-brand" href="#" id="nav_consultar">Consultar Viagem</a>
+                <a class="navbar-brand" href="consultar.html" id="nav_consultar">Consultar Viagem</a>
               </div>
             </nav>
           </div>
@@ -61,11 +61,8 @@
                 <small>Data de Chegada*</small>
                 <input type="date" name="idTravel" id="idTravel" class="form-control ipts" width="450px" required>
 
-                <button type="submit" class="t-2 form-control text-center" id="consultTravel">
-                  <span id="search">
-                    <!-- <img src="./assets/icons/search.png" class="rounded float-start" alt="search"> -->
-                  </span>
-                  Consultar
+                <button type="submit" class=" form-control text-center" id="consultTravel" onclick="getProvince()">
+                  Pesquisar
                 </button>
               </div>
             </form>
@@ -156,5 +153,17 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 </body>
+
+<script>
+  function getProvince() {
+    $.ajax({
+      type: 'GET',
+      url: 'http://localhost:6800/provinces/list',
+      dataType: 'JSON'
+    }).done(function (resp) {
+      alert(resp);
+    })
+  }
+</script>
 
 </html>
