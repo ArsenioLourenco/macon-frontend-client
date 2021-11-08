@@ -205,4 +205,42 @@
   <script src="src/js/jquery-3.6.0.min.js"></script>
   <script src="src/js/main.js"></script>
 </body>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+
+      $('#submit').click(function(e){
+        e.preventDefault();
+
+
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var msg_subject = $("#msg_subject").val();
+        var message = $("#message").val();
+
+
+        $.ajax({
+            type: "POST",
+            url: "/formProcess.php",
+            dataType: "json",
+            data: {name:name, email:email, msg_subject:msg_subject, message:message},
+            success : function(data){
+                if (data.code == "200"){
+                    alert("Success: " +data.msg);
+                } else {
+                    $(".display-error").html("<ul>"+data.msg+"</ul>");
+                    $(".display-error").css("display","block");
+                }
+            }
+        });
+
+
+      });
+  });
+</script>
+
+
+
 </html>
