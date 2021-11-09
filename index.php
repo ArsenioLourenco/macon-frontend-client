@@ -43,19 +43,26 @@
               <h5 id="title_1">Consultar Viagem</h5>
               <hr style="background-color: #368ED6; ">
               <div class="teste p-2">
+              <small>Selecione o Pais*</small>
+                <select type="select" name="idTravel" id="country" class="form-control ipts" required >
+                  <option value="0" disabled selected>Selecione um Pais</option>
+                </select>
+
                 <small>Origem*</small>
-                <select type="select" name="idTravel" id="idTravel" class="form-control ipts" required>
+                <select type="select" name="idTravel" id="source" class="form-control ipts" required >
                   <option value="0">Selecione uma Província</option>
                 </select>
 
                 <small>Destino*</small>
-                <input type="text" name="idTravel" id="idTravel" class="form-control ipts" width="450px" required="">
+                <select type="select" name="idTravel" id="destination" class="form-control ipts" width="450px" required>
+                  <option value="0">Selecione uma Província Destino</option>
+                </select>
 
                 <small>Data de Partida*</small>
-                <input type="date" name="idTravel" id="idTravel" class="form-control ipts" width="450px" required>
+                <input type="date" name="departureDate" id="departureDate" class="form-control ipts" width="450px" required>
 
                 <small>Data de Chegada*</small>
-                <input type="date" name="idTravel" id="idTravel" class="form-control ipts" width="450px" required>
+                <input type="date" name="returnDate" id="returnDate" class="form-control ipts" width="450px" required>
 
                 <button type="submit" class="t-2 form-control text-center" id="consultTravel" name="consultTravel" data-bs-toggle="modal" data-bs-target="#modalPesquisa">
                   <span id="search">
@@ -80,7 +87,7 @@
       </div>
       <div class="modal-body">
       <section class="bg-light p-0">
-    <h3 class="pb-2">Resultado da Pesquisa</h3>
+    <h3 class="pb-2">Datas Disponíveis</h3>
     <div class="table-responsive" id="no-more-tables">
       <table class="table bg-white">
         <thead class="bg-primary text-black">
@@ -95,24 +102,7 @@
           
         </thead>
         <tbody id="searchResultTbl">
-          <tr>
-            <td data-title="Partida">000522</td>
-            <td data-title="Destino">00547</td>
-            <td data-title="Horário">10:45</td>
-            <td data-title="Data">18:55</td>
-            <td data-title="Preço">Benfica</td>
-            <td data-title="Marcar Viagem"><button id="btn-marcar" data-bs-toggle="modal"
-            data-bs-target="#exampleModal">Marcar</button></td>
-          </tr>
-          <tr>
-            <td data-title="Partida">000522</td>
-            <td data-title="Destino">00547</td>
-            <td data-title="Horário">10:45</td>
-            <td data-title="Data">18:55</td>
-            <td data-title="Preço">Benfica</td>
-            <td data-title="Marcar Viagem"><button id="btn-marcar" data-bs-toggle="modal"
-            data-bs-target="#exampleModal">Marcar</button></td>
-          </tr>
+          
         </tbody>
       </table>
     </div>
@@ -121,7 +111,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Agendar Viagem</button>
       </div>
     </div>
   </div>
@@ -148,64 +137,15 @@
           <p id="descTitle1">Agende as suas viajens a partir da nossa plataforma <br>
             ou consulte as viagens que já foram agendadas e reserve seu lugar.
           </p>
-          <button type="submit" class="t-2 text-center" id="agendTravel" data-bs-toggle="modal"
-            data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-            <span id="search">
-              <!-- <img src="./assets/icons/search.png" class="rounded float-start" alt="search"> -->
-            </span>
+          <a href="agenda.php" class="btn t-2 text-center" id="agendarViagemBtn">
             Agendar Viagem
-          </button>
+          </a>
         </div>
       </div>
     </div><br><br>
     <small>Copyrigth&copy;2021 - Interdígitos, LDA - Tecnologia de informação e serviços </small>
   </div>
-  <!-- Modal Area -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Agende Aqui Sua Viagem</h5>
-        </div><div class="row">
-            <div class="col">
-              <form>
-                <small>Trajecto*</small>
-                <select name="idTravel" class="form-control iptsAgend" required>
-                  <option value="" selected>Selecione Seu Trajecto Aqui</option>
-                  <option value="">Luanda - Uíge</option>
-                  <option value="">Luanda - Uíge</option>
-                  <option value="">Luanda - Uíge</option>
-                  <option value="">Luanda - Uíge</option>
-                </select>
 
-                <small>Telefone*</small>
-                <input type="number" name="idTravel" id="idTravel" class="form-control iptsAgend" width="450px"
-                  required>
-
-                <small>Email*</small>
-                <input type="email" name="idTravel" id="idTravel" class="form-control iptsAgend" width="450px" required>
-
-                <small>Lugares*</small>
-                <input type="number" name="idTravel" id="idTravel" class="form-control iptsAgend" width="450px"
-                  required>
-
-                <span>*</span>
-                <input type="submit" name="idTravel" id="AgendTravelBtn" class="form-control iptsAgend" width="450px"
-                  value="Agendar Viagem" required>
-              </form>
-        <div class="modal-body">
-          
-            </div>
-            <div class="col">
-              <img src="./assets/gif/agendTravel.gif" alt="agendTravel" class="agendTravel">
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer text-center">
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

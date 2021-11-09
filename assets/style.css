@@ -60,7 +60,7 @@ body {
   color: #fcfcfc;
 }
 
-#agendTravel {
+#agendarViagemBtn {
   width: 259px;
   height: 64px;
   background-color: #3285c7;
@@ -69,8 +69,8 @@ body {
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 18px;
+  line-height: 21px;
   color: #fcfcfc;
 }
 
@@ -169,8 +169,8 @@ small {
   /* Botão Marcar Style */
 
   #btn-marcar {
-    width: 70px;
-    height: 30px;
+    width: 30px;
+    height: 20px;
     background-color: #3285c7;
     border: none;
     border-radius: 5px;
