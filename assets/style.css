@@ -43,7 +43,7 @@ body {
 }
 
 .agendTravel {
-  width: 350px;
+  width: 450px;
 }
 
 #consultTravel {
@@ -93,7 +93,11 @@ body {
 #phone_1 {
   width: 64px;
   height: 64px;
-  margin-top: 8px;
+  margin-top: 17px;
+   margin-left: 20px;
+}
+#imagem{
+  float: left;
 }
 
 .colu_1 {
@@ -135,24 +139,6 @@ small {
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-<<<<<<< HEAD
-  color: #1C1C1C;
-}
-
-#nav_consultar{
-  font-family: Roboto;
-  font-style: normal;
-  color: #FCFCFC;
- 
-}
-
-#buttonConsultar{
-  font-family: Roboto;
-  font-style: normal;
-  color: #FCFCFC;
-  
-}
-=======
   color: #1c1c1c;
 }
    /* Table style */
@@ -201,4 +187,19 @@ small {
     margin-left: 25px;
 
   }
->>>>>>> 9cda24b939a391dcb0f63b54620d9993a665497f
+
+  .navbar-nav {
+    margin-left: 800px;
+  }
+
+  #ponto{
+    color: red;
+  }
+
+  .footers{
+    height:150px ;
+  }
+
+  #basic{
+    border-bottom:2px outset rgb(7, 148, 241);
+  }
