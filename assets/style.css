@@ -60,7 +60,7 @@ body {
   color: #fcfcfc;
 }
 
-#agendarViagemBtn {
+/* #agendarViagemBtn {
   width: 259px;
   height: 64px;
   background-color: #3285c7;
@@ -72,7 +72,7 @@ body {
   font-size: 18px;
   line-height: 21px;
   color: #fcfcfc;
-}
+} */
 
 .teste {
   padding: 8px;
@@ -172,20 +172,18 @@ small {
 
   /* Botão Marcar Style */
 
-  #btn-marcar {
-    width: 30px;
-    height: 20px;
-    background-color: #3285c7;
+  .btn-marcar {
+    height: 100%;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     font-family: Roboto;
     font-weight: 350;
-    font-size: 15px;
+    font-size: .85rem;
     line-height: 23px;
     color: #fcfcfc;
-    position: absolute;
-    margin-left: 25px;
-
+    position: relative;
+    padding: 6px;
+    text-decoration: none;
   }
 
   .navbar-nav {
@@ -197,7 +195,7 @@ small {
   }
 
   .footers{
-    height:150px ;
+    margin-top: 150px;
   }
 
   #basic{

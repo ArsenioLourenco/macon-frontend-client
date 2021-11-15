@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <div class="logotype">
-          <a class="nav-link active" aria-current="page" href="index.html"><img src="./assets/img/LOGO-MACON.png" alt="Logotipo Macon" id="logotype" style="height: 60px;">
+          <a class="nav-link active" aria-current="page" href="index.php"><img src="./assets/img/LOGO-MACON.png" alt="Logotipo Macon" id="logotype" style="height: 60px;">
           </a>
           <br>
           <span style="top: 80px; position: absolute; margin-bottom: 10px;" id="descLogo">Consulte & Agende Aqui Suas
@@ -37,7 +37,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="consultar.html">Consultar Viagem</a>
+              <a class="nav-link" href="consultar.php">Consultar Viagem</a>
             </li>
          
             <li class="nav-item">
@@ -56,46 +56,63 @@
         <div class="container">
           <div class="row justify-content-center mb-5">
             <nav class="navbar navbar-light col-sm-6">
-              <form class="col-8">
-                <form class="form-row">
-                  <div class="form-group">
-                    <p class="" id="ponto" style="margin-bottom: 0;"><small>Trajeto</small>*</p>
-                    <div class="input-group">
-                      <span class="input-group-text" id="basic-addon1"><i class="bi bi-arrow-left-right"></i></span>
-                      <input type="text" class="form-control" placeholder="Trajecto" aria-label="Username" aria-describedby="basic">
-                    </div>
+              <form id="agendTravelForm" class="col-8 form-row">
+                
+                <div class="form-group">
+                  <p class="" id="ponto" style="margin-bottom: 0;"><small>Origem</small>*</p>
+                  <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1"></i></span>
+                    <input id="agenda-viagem-origem" type="text" class="form-control" name="origem" placeholder="Origem" aria-label="Username" aria-describedby="basic">
                   </div>
-                  <div class="form-group">
-                    <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Telefone</small>*</p>
-                    <div class="input-group">
-                      <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-lines-fill"></i></span>
-                      <input type="tel" class="form-control" placeholder="Telefone" aria-label="Username" aria-describedby="basic">
-                    </div>
-                  </div>
-                 
-                  <div class="form-group">
-                   
-                    <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Email</small>*</p>
-                    <div class="input-group ">
-                      <span class="input-group-text" id="basic-addon1"><i class="bi bi-at"></i></span>
-                      <input type="email" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic">
-                    </div>
+                </div>
 
+                <div class="form-group">
+                  <p class="" id="ponto" style="margin-bottom: 0;"><small>Destino</small>*</p>
+                  <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1"></i></span>
+                    <input id="agenda-viagem-destino" type="text" class="form-control" name="destino" placeholder="Destino" aria-label="Username" aria-describedby="basic">
                   </div>
-                  <div class="form-group">
-                    
-                    <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Quantidade de lugares</small>*</p>
-                    <div class="input-group ">
-                      <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
-                      <input type="number" class="form-control" placeholder="Quantidade de lugares" aria-label="Username" aria-describedby="basic">
-                    </div>
-                  </div><br>
-                  <button type="submit" class=" btn btn-primary " id="consulta" data-bs-toggle=""data-bs-target="" data-bs-whatever="">
-                    Agendar Viagem
+                </div>
+
+                <div class="form-group">
+                  <p class="" id="ponto" style="margin-bottom: 0;"><small>Preço</small>*</p>
+                  <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Kz</i></i></span>
+                    <input id="agenda-viagem-preco" type="text" class="form-control" name="destino" placeholder="Preço" aria-label="Username" aria-describedby="basic">
+                  </div>
+                </div>
+
+                <input id="agenda-viagem-id" type="hidden" class="form-control" name="travelId" placeholder="Trajecto" aria-label="Username" aria-describedby="basic">
+
+                <div class="form-group">
+                  <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Telefone</small>*</p>
+                  <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-lines-fill"></i></span>
+                    <input type="tel" class="form-control" name="phoneNumber" placeholder="Telefone" aria-label="Username" aria-describedby="basic">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  
+                  <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Email</small>*</p>
+                  <div class="input-group ">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-at"></i></span>
+                    <input type="email" class="form-control" name="email" placeholder="Email" aria-label="Username" aria-describedby="basic">
+                  </div>
+
+                </div>
+                <div class="form-group">
+                  
+                  <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Quantidade de lugares</small>*</p>
+                  <div class="input-group ">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
+                    <input type="number" class="form-control" name="placesReserve" placeholder="Quantidade de lugares" aria-label="Username" aria-describedby="basic">
+                  </div>
+                </div><br>
+                <button type="submit" class=" btn btn-primary " id="consulta" data-bs-toggle=""data-bs-target="" data-bs-whatever="">
+                  Agendar Viagem
                 </button>
-                </form>
               </form>
-             
             </nav>
 
             <div class="col-4">

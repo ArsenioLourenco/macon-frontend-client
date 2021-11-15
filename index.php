@@ -32,7 +32,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <div class="logotype">
-          <a class="nav-link active" aria-current="page" href="index.html"><img src="./assets/img/LOGO-MACON.png" alt="Logotipo Macon" id="logotype" style="height: 60px;">
+          <a class="nav-link active" aria-current="page" href="index.php"><img src="./assets/img/LOGO-MACON.png" alt="Logotipo Macon" id="logotype" style="height: 60px;">
           </a>
           <br>
           <span style="top: 80px; position: absolute; margin-bottom: 10px;" id="descLogo">Consulte & Agende Aqui Suas
@@ -44,7 +44,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="consultar.html">Consultar Viagem</a>
+              <a class="nav-link" href="consultar.php">Consultar Viagem</a>
             </li>
          
             <li class="nav-item">
@@ -93,7 +93,7 @@
                 <small>Data de Partida*</small>
                 <input type="date" name="departureDate" id="departureDate" class="form-control ipts" width="450px" required>
 
-                <small>Data de Chegada*</small>
+                <small>Data de Chegada</small>
                 <input type="date" name="returnDate" id="returnDate" class="form-control ipts" width="450px" required>
 
                 <button type="submit" class="t-2 form-control text-center" id="consultTravel" name="consultTravel" data-bs-toggle="modal" data-bs-target="#modalPesquisa">
@@ -122,7 +122,7 @@
     <h3 class="pb-2">Datas Disponíveis</h3>
     <div class="table-responsive" id="no-more-tables">
       <table class="table bg-white">
-        <thead class="bg-primary text-black">
+        <thead class="text-black">
           <tr>
             <th>Partida</th>
             <th>Destino</th>
@@ -169,7 +169,7 @@
           <p id="descTitle1">Agende as suas viajens a partir da nossa plataforma <br>
             ou consulte as viagens que já foram agendadas e reserve seu lugar.
           </p>
-          <a href="agenda.php" class="btn t-2 text-center" id="agendarViagemBtn">
+          <a href="pesquisa.php" class="btn btn-primary text-center" id="agendarViagemBtn">
             Agendar Viagem
           </a>
         </div>
@@ -177,30 +177,7 @@
     </div><br><br>
   </div>
 
-                <small>Email*</small>
-                <input type="email" name="idTravel" id="idTravel" class="form-control iptsAgend" width="450px" required>
-
-                <small>Lugares*</small>
-                <input type="number" name="idTravel" id="idTravel" class="form-control iptsAgend" width="450px"
-                  required>
-
-                <span>*</span>
-                <input type="submit" name="idTravel" id="AgendTravelBtn" class="form-control iptsAgend" width="450px"
-                  value="Agendar Viagem" required>
-              </form>
-        <div class="modal-body">
-          
-            </div>
-            <div class="col">
-              <img src="./assets/gif/agendTravel.gif" alt="agendTravel" class="agendTravel">
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer text-center">
-        </div>
-      </div>
-    </div>
-  </div>
+               
 
   <footer class="row col-12  bg-light">
     <div class="footers text-center">

@@ -18,6 +18,10 @@
     <style>
 
     </style>
+
+    <script>
+      console.log('Location (URL):', window.location)
+    </script>
 </head>
 
 <body>

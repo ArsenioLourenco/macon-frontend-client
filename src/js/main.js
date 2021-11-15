@@ -9,6 +9,37 @@ const consultTravelBtn = $("#consultTravel"),
 consultTravelBtn.on("click", handleConsultTravel);
 countryList.on('change', handleCountryListChange);
 
+// Agend Travel Submition
+$('#agendTravelForm').on('submit', createNewTravel);
+
+function createNewTravel(event) {
+  event.preventDefault();
+
+  $.ajax({
+    type: "POST",
+    url: "http://192.168.4.97:6800/client/travel/agend",
+    // url: "http://localhost:3000/senddata.php",
+    data: $(this).serialize(),
+    dataType: "JSON",
+    processData: false,
+    success: function (response) {
+
+      const { message } = response;
+      
+      const [ seats, route, departureDate, price, reservationCode ] = message.split('.');
+      
+      window.open(
+        `http://localhost:3000/generatepdf.php?seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}`,
+        '_blank'
+      )
+
+    },
+    error: function (response) {
+      console.log("Error: ", response);
+    },
+  });
+}
+
 function handleConsultTravel(event) {
   event.preventDefault();
 
@@ -42,15 +73,15 @@ function handleConsultTravel(event) {
         returnDate
       }) => {
         
-      searchResultTable.append(`<tr>
+      searchResultTable.append(`<tr data-id="${id}">
             <td data-title="originProvinceName">${originProvinceName}</td>
             <td data-title="destinyProvinceName">${destinyProvinceName}</td>
             <td data-title="time"> Partida: ${timeToGoTo} | Chegada: ${timeToArrival}</td>
             <td data-title="dates"> Partida: ${departureDate} | Regresso: ${returnDate}</td>
             <td data-title="price">${price}</td>
             <td data-title="Marcar Viagem">
-            <a href="agenda.php" 
-              class="btn-marcar t-2 text-center" 
+            <a href="pesquisa.php?travel=${id}&origem=${originProvinceName}&destino=${destinyProvinceName}&preco=${price}" 
+              class="btn btn-primary btn-t-2 text-center"
               id="agendarViagemBtn"
               data-originProvince="${originProvinceName}"
               data-destinyProvince="${destinyProvinceName}"
@@ -132,8 +163,39 @@ function appendProvinceList(country_id) {
       });
 }
 
+function getFromParamsTravelData() {
+  const paramStringSize = window.location.search.length;
+  const queryParams = window.location.search.substring(1, paramStringSize).split('&');
+  const travel = queryParams;
+
+  for (let i = 0; i < travel.length; i++) {
+    let item = travel[i];
+
+    const nameParam = item.split('=')[0];
+    const valueParam = item.split('=')[1];
+
+    if (nameParam === 'travel')
+      $('#agenda-viagem-id').val(valueParam);
+
+    if (nameParam === 'origem')
+      $('#agenda-viagem-origem').val(valueParam).attr('readonly', true);
+
+    if (nameParam === 'destino')
+      $('#agenda-viagem-destino').val(valueParam).attr('readonly', true);
+
+    if (nameParam === 'preco')
+      $('#agenda-viagem-preco').val(valueParam).attr('readonly', true);
+
+  }
+}
+
+function verifySelectedTravel() {
+  getFromParamsTravelData()
+}
+
 // Invoke functions
 appendCountryList();
+verifySelectedTravel();
 
 
 

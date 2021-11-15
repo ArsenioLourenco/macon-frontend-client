@@ -27,7 +27,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
             <div class="logotype">
-              <a class="nav-link active" aria-current="page" href="index.html"><img src="./assets/img/LOGO-MACON.png" alt="Logotipo Macon" id="logotype" style="height: 60px;">
+              <a class="nav-link" aria-current="page" href="index.php"><img src="./assets/img/LOGO-MACON.png" alt="Logotipo Macon" id="logotype" style="height: 60px;">
               </a>
               <br>
               <span style="top: 80px; position: absolute; margin-bottom: 10px;" id="descLogo">Consulte & Agende Aqui Suas
@@ -36,10 +36,10 @@
             <div class="collapse navbar-collapse dis" id="navbarText" style="display:flex;">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="consultar.html">Consultar Viagem</a>
+                  <a class="nav-link active" href="consultar.php">Consultar Viagem</a>
                 </li>
              
                 <li class="nav-item">
