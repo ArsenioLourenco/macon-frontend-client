@@ -66,7 +66,7 @@ function handleConsultTravel(event) {
         id, 
         originProvince: { provinceName: originProvinceName }, 
         destinyProvince: { provinceName: destinyProvinceName },
-        transport: { transportNumber: transNumber},
+        transport: { transportNumber: transNumber, totalPlace: toplace},
         price,
         timeToArrival,
         timeToGoTo,
@@ -81,7 +81,7 @@ function handleConsultTravel(event) {
             <td data-title="dates"> Partida: ${departureDate} | Regresso: ${returnDate}</td>
             <td data-title="price">${price}</td>
             <td data-title="transNumber">${transNumber}</td>
-            <td data-title="seat">${20}</td>
+            <td data-title="toplace">${toplace}</td>
             <td data-title="Marcar Viagem">
             <a href="pesquisa.php?travel=${id}&origem=${originProvinceName}&destino=${destinyProvinceName}&preco=${price}" 
               class="btn btn-primary btn-t-2 text-center"

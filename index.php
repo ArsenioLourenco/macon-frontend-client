@@ -164,7 +164,7 @@
           <p id="descTitle1">Agende as suas viajens a partir da nossa plataforma <br>
             ou consulte as viagens que já foram agendadas e reserve seu lugar.
           </p>
-          <a href="pesquisa.php" class="btn btn-primary text-center" id="agendarViagemBtn">
+          <a href="agendar.php" class="btn btn-primary text-center" id="agendarViagemBtn">
             Agendar Viagem
           </a>
         </div>
