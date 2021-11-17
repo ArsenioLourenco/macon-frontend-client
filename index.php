@@ -152,14 +152,9 @@
         <p>
         <div class="row">
           <div class="col-1">
-            <img src="./assets/icons/smartphone.png" alt="Contactos" id="phone_1">
           </div>
           <div class="col-7">
-            <p style="margin-top: 17px; margin-left: 20px;">
-              <span style="color: #368ED6;">Fale Connosco</span>
-              <br>
-              +244 936 789 173 - 226 21 35 04
-            </p>
+            
           </div>
         </div>
         </p>
@@ -182,6 +177,12 @@
 		<div class="container">
 			<div class="row text-center py-5">
 				<div class="col-md-4">
+        <img src="./assets/icons/smartphone.png" alt="Contactos" id="phone_1">
+        <p style="margin-top: 17px; margin-left: 20px;">
+              <span style="color: #368ED6;">Fale Connosco</span>
+              <br>
+              +244 936 789 173 - 226 21 35 04
+            </p>
 				</div>
 				<div class="col-md-4">
 					<h3 class="text-center">CONTACT INFO</h3>

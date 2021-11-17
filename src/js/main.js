@@ -66,11 +66,12 @@ function handleConsultTravel(event) {
         id, 
         originProvince: { provinceName: originProvinceName }, 
         destinyProvince: { provinceName: destinyProvinceName },
+        transport: { transportNumber: transNumber},
         price,
         timeToArrival,
         timeToGoTo,
         departureDate,
-        returnDate
+        returnDate,
       }) => {
         
       searchResultTable.append(`<tr data-id="${id}">
@@ -79,7 +80,7 @@ function handleConsultTravel(event) {
             <td data-title="time"> Partida: ${timeToGoTo} | Chegada: ${timeToArrival}</td>
             <td data-title="dates"> Partida: ${departureDate} | Regresso: ${returnDate}</td>
             <td data-title="price">${price}</td>
-            <td data-title="transport">${10}</td>
+            <td data-title="transNumber">${transNumber}</td>
             <td data-title="seat">${20}</td>
             <td data-title="Marcar Viagem">
             <a href="pesquisa.php?travel=${id}&origem=${originProvinceName}&destino=${destinyProvinceName}&preco=${price}" 
