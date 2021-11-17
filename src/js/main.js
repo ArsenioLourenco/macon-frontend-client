@@ -79,6 +79,8 @@ function handleConsultTravel(event) {
             <td data-title="time"> Partida: ${timeToGoTo} | Chegada: ${timeToArrival}</td>
             <td data-title="dates"> Partida: ${departureDate} | Regresso: ${returnDate}</td>
             <td data-title="price">${price}</td>
+            <td data-title="transport">${10}</td>
+            <td data-title="seat">${20}</td>
             <td data-title="Marcar Viagem">
             <a href="pesquisa.php?travel=${id}&origem=${originProvinceName}&destino=${destinyProvinceName}&preco=${price}" 
               class="btn btn-primary btn-t-2 text-center"
@@ -201,35 +203,6 @@ verifySelectedTravel();
 
 
 
-
-
-
-
-
-
-
-
-// $("#search").click(function(event){
-
-//   //EVITAR QUE O FORMULÁRIO SEJA SUBMETIDO ANTES DO ENVIO PARA A API
-//   event.preventDefault();
-
-//   //ENVIA PARA A API
-//   $.ajax ({
-//     type: "POST",
-//         url: "http://192.168.4.97:6800/",
-//         data:$("#form_1").serialize(),
-//         dataType: "json",
-//         success: function(){
-//           //SUBMETE O FORMULÁRIO PARA A ACTION DEFINIDA NO CABEÇALHO
-//           $("#form_1").submit();
-
-
-//         }
-
-
-//   })
-// })
 
 
 

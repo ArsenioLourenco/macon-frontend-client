@@ -197,6 +197,12 @@ small {
   .footers{
     margin-top: 150px;
   }
+  footer {
+    background-color: #f3fcfa;
+    background-size: cover;
+    color: rgb(0, 0, 0);
+   
+  }
 
   #basic{
     border-bottom:2px outset rgb(7, 148, 241);

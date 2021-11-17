@@ -94,7 +94,7 @@
                 
                 <div class="form-group">
                   
-                  <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Email</small>*</p>
+                  <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Email</small></p>
                   <div class="input-group ">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-at"></i></span>
                     <input type="email" class="form-control" name="email" placeholder="Email" aria-label="Username" aria-describedby="basic">
@@ -125,12 +125,29 @@
 
 
         <!-- Footer     -->
-        <footer class="row col-12  bg-light">
+
+        <footer>
+		<div class="container">
+			<div class="row text-center py-5">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+					<h3 class="text-center">CONTACT INFO</h3>
+					<p>(888) 888-8888<br>
+					email@nuno.com</p>
+				</div>
+        <br>
+        <small >Copyrigth&copy;2021 - Interdígitos, LDA - Tecnologia de informação e serviços </small>
+			</div><!--- End of Row -->
+		</div><!--- End of Container -->
+	</footer> 
+
+        <!-- <footer class="row col-12  bg-light">
           <div class="footers text-center">
             <small >Copyrigth&copy;2021 - Interdígitos, LDA - Tecnologia de informação e serviços </small>
           </div>
         </footer>
-       
+        -->
         
       
       

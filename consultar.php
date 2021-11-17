@@ -108,11 +108,23 @@
         </div>
     </div>
 
-    <footer class="row col-12  bg-light">
-        <div class="footers text-center">
-          <small >Copyrigth&copy;2021 - Interdígitos, LDA - Tecnologia de informação e serviços </small>
-        </div>
-      </footer>
+
+<!-- Footer -->
+<footer>
+		<div class="container">
+			<div class="row text-center py-5">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+					<h3 class="text-center">CONTACT INFO</h3>
+					<p>(888) 888-8888<br>
+					email@nuno.com</p>
+				</div>
+        <br>
+        <small >Copyrigth&copy;2021 - Interdígitos, LDA - Tecnologia de informação e serviços </small>
+			</div><!--- End of Row -->
+		</div><!--- End of Container -->
+	</footer> 
 
 </body>
 

@@ -67,8 +67,6 @@
     
         <!-- As a link -->
 
-
-
         <div class="" id="navbarToggleExternalContent">
           <div class="bg-ligth p-2">
             <form action="/src/js/main" method="post" id="form_1">
@@ -129,6 +127,8 @@
             <th>Horário</th>
             <th>Data</th>
             <th>Preço</th>
+            <th>Nº Transporte</th>
+            <th>Assentos</th>
             <th>Marcar Viagem</th>
           </tr>
           
@@ -177,13 +177,24 @@
     </div><br><br>
   </div>
 
-               
+  <!-- Footer -->
+  <footer>
+		<div class="container">
+			<div class="row text-center py-5">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+					<h3 class="text-center">CONTACT INFO</h3>
+					<p>(888) 888-8888<br>
+					email@nuno.com</p>
+				</div>
+        <br>
+        <small >Copyrigth&copy;2021 - Interdígitos, LDA - Tecnologia de informação e serviços </small>
+			</div><!--- End of Row -->
+		</div><!--- End of Container -->
+	</footer>            
 
-  <footer class="row col-12  bg-light">
-    <div class="footers text-center">
-      <small >Copyrigth&copy;2021 - Interdígitos, LDA - Tecnologia de informação e serviços </small>
-    </div>
-  </footer>
+  
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
