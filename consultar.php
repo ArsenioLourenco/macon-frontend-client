@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Macon - Consultar_Viagens</title>
+    <title>Macon - Consultar Viagens</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- CSS only -->
@@ -21,145 +21,160 @@
 
     </style>
 
-   <!-- JavaScript Bundle with Popper -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-  <script src="src/js/jquery-3.6.0.min.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="src/js/jquery-3.6.0.min.js"></script>
 
 </head>
 
 <body>
-    <div class="row col-12">
+    <div class="form-row">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <div class="logotype">
-              <a class="nav-link" aria-current="page" href="index.php"><img src="./assets/img/LOGO-MACON.png" alt="Logotipo Macon" id="logotype" style="height: 60px;">
-              </a>
-              <br>
-              <span style="top: 80px; position: absolute; margin-bottom: 10px;" id="descLogo">Consulte & Agende Aqui Suas
-                Viagens</span>
+            <div class="container-fluid">
+                <div class="logotype">
+                    <a class="nav-link" aria-current="page" href="index.php"><img src="./assets/img/LOGO-MACON.png"
+                            alt="Logotipo Macon" id="logotype" style="height: 60px;">
+                    </a>
+                    <br>
+                    <span style="top: 80px; position: absolute; margin-bottom: 10px;" id="descLogo">Consulte & Agende
+                        Aqui Suas
+                        Viagens</span>
+                </div>
+                <div class="collapse navbar-collapse dis" id="navbarText" style="display:flex;">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="consultar.php">Consultar Viagem</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre Nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contactos</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse dis" id="navbarText" style="display:flex;">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="consultar.php">Consultar Viagem</a>
-                </li>
-             
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Sobre Nós</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contactos</a>
-                </li>
-              </ul>
-    
-            </div>
-          </div>
         </nav>
-      </div>
-
+    </div>
 
 
     <div class="container t-1 p-3">
-        <div class="row">
-            <div class="col colu_1">
-                
-               
-                <div class="container ">
-
-                    <div class="row ">
-                        <div class="text-center p-3">
-                            <h2 id="principalTitle">Consultar Viagens</h2>
-                            <p id="descTitle1"> Consulte as viagens que já foram agendadas e reserve seu lugar<br>
-                                ou agende as suas viajens a partir da nossa plataforma.
-                            </p>
-                        </div>
-                        <div class="row justify-content-center mb-5">
-                            <nav class="navbar navbar-light col-sm-6">
-                                <form class=" col-12">
-                                    <div class="form-row" >
-                                        <div class="form-group">
-                                            <label for="my-input"></label>
-                                            <div class=" input-group">
-                                                <span class="input-group-text" id="contato"><i class="bi bi-person-fill"></i></span>
-                                                <input type="tel" class="form-control" id="form-input" placeholder="Contatos"
-                                                    aria-label="Contatos" aria-describedby="contato">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="my-input"></label>
-                                            <div class=" input-group">
-                                                <span class="input-group-text" id="Codigo-pessoal">#</span>
-                                                <input type="password" class="form-control" id="form-input" placeholder="Código de agendamento"
-                                                    aria-label="Codigo_pessoal" aria-describedby="Codigo-pessoal">
-                                            </div>
-                                        </div>
-                                    </div>
-                                <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Launch static backdrop modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-                                    </div>
-                                </form>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="text-center p-3">
+            <h3 id="principalTitle">Consultar Viagem</h3>
+            <p id="descTitle1">
+                Consulte as viagens que já foram agendadas e reserve seu lugar<br>
+                ou agende as suas viajens a partir da nossa plataforma.
+            </p>
         </div>
     </div>
 
 
-    
+    <div class="consultar_viagem " bg-ligth p-2>
+        <form id="form_consultar" onSubmit="return false;">
+            <div class="form-group">
+                <div class="form-row">
+                    <label for="my-input">CONTACTO:</label>
+                    <div class=" input-group">
+                        <span class="input-group-text" id="contato">
+                            <i class="bi bi-phone-fill"></i></span>
+                        <input type="tel" class="form-control" id="form-input" placeholder="900 000 000"
+                            aria-label="Contatos" aria-describedby="contato">
+                    </div>
+                </div>
+                <br />
+                <div class="form-row">
+                    <label for="my-input">CÓDIGO DE AGENTAMENTO:</label>
+                    <div class=" input-group">
+                        <span class="input-group-text" id="Codigo-pessoal"><i class="bi bi-123"></i></span>
+                        <input type="password" class="form-control" id="form-input" placeholder="123 ABC "
+                            aria-label="Codigo_pessoal" aria-describedby="Codigo-pessoal">
+                    </div>
+                </div>
 
+                <br />
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                id="travelConsult" name="travelConsult" data-bs-target="#modalConsultarViagem">
+                    Consultar Viagem
+                </button>
+            </div>
+        </form>
+    </div>
 
+    <!-- Modal Consultar Viagem-->
+    <div class="modal fade" id="modalConsultarViagem" data-bs-backdrop="static" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalConsultarViagem">Consultar Viagem
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <section>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Origem</th>
+                                        <th scope="col">Destino</th>
+                                        <th scope="col">Horário</th>
+                                        <th scope="col">Transporte</th>
+                                        <th scope="col">Nº Assentos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
 
-
-
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Understood</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 </body>
 <!-- Footer -->
 <footer>
-		<div class="container">
-			<div class="row text-center py-5">
-				<div class="col-md-4">
-				</div>
-				<div class="col-md-4">
-					<h3 class="text-center">CONTACT INFO</h3>
-					<p>(888) 888-8888<br>
-					email@nuno.com</p>
-				</div>
-        <br>
-        <small >Copyrigth&copy;2021 - Interdígitos, LDA - Tecnologia de informação e serviços </small>
-			</div><!--- End of Row -->
-		</div><!--- End of Container -->
-	</footer> 
-   
+    <div class="container">
+        <div class="row text-center py-1">
+            <div class="col-md-4">
+            <img src="./assets/icons/smartphone.png" alt="Contactos" id="phone_1">
+                    <p style="margin-top: 17px; margin-left: 20px;">
+                        <span style="color: #368ED6;">Fale Connosco</span>
+                        <br>
+                        +244 936 789 173 - 226 21 35 04
+                    </p>
+            </div>
+            <div class="col-md-4">
+                <h3 class="text-center">CONTACT INFO</h3>
+                <p>(888) 888-8888<br>
+                    email@nuno.com</p>
+            </div>
+            <br>
+            <small>Copyrigth&copy;2021 - Interdígitos, LDA - Tecnologia de informação e serviços </small>
+        </div>
+        <!--- End of Row -->
+    </div>
+    <!--- End of Container -->
+</footer>
+
 </html>

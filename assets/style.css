@@ -207,3 +207,40 @@ small {
   #basic{
     border-bottom:2px outset rgb(7, 148, 241);
   }
+.consultar_viagem{
+  position: relative;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  width: 500px;
+  background: rgb(210, 224, 241);
+  border-radius: 10px;
+}
+.consultar_viagem form{
+  padding: 25px 50px 25px 50px;
+  box-sizing: border-box;
+}
+form .input-group{
+  position: relative;
+  border-bottom: 2px ;
+}
+
+.input-group form-control{
+  width: 100%;
+  padding: 0 5px;
+  height: 50px;
+  font-size: 16px;
+  border: none;
+  font-size: 16px;
+  background: none;
+  outline: none;
+}
+
+label{
+  position: relative;
+  color: #adadad;
+}
+
+.consultar_viagem button{
+  width: 100%;
+}
