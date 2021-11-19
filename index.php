@@ -99,8 +99,8 @@
                                 <input type="date" name="returnDate" id="returnDate" class="form-control ipts"
                                     width="450px" required>
 
-                                <button type="submit" class="t-2 form-control text-center" id="consultTravel"
-                                    name="consultTravel" data-bs-toggle="modal" data-bs-target="#modalPesquisa">
+                                <button type="submit" class="t-2 form-control text-center" id="searchTravel"
+                                    name="searchTravel" data-bs-toggle="modal" data-bs-target="#modalPesquisa">
                                     <span id="search">
                                         <!-- <img src="./assets/icons/search.png" class="rounded float-start" alt="search"> -->
                                     </span>
@@ -137,10 +137,8 @@
                                                 <th>Assentos</th>
                                                 <th>Marcar Viagem</th>
                                             </tr>
-
                                         </thead>
                                         <tbody id="searchResultTbl">
-
                                         </tbody>
                                     </table>
                                 </div>

@@ -1,5 +1,5 @@
 // Selecionar a consulta com Id 
-const consultTravelBtn = $("#consultTravel"),
+const consultTravelBtn = $("#searchTravel"),
   searchResultTable = $("#searchResultTbl"),
   countryList = $("#country"),
   provinceListSource = $("#source"),
@@ -17,7 +17,7 @@ function createNewTravel(event) {
 
   $.ajax({
     type: "POST",
-    url: "http://192.168.4.97:6800/client/travel/agend",
+    url: "http://192.168.40.32:6800/client/travel/agend",
     // url: "http://localhost:3000/senddata.php",
     data: $(this).serialize(),
     dataType: "JSON",
@@ -52,7 +52,7 @@ function handleConsultTravel(event) {
 
   $.ajax({
     type: "GET",
-    url: `http://192.168.4.97:6800/travels/${source}/${destination}/${departureDate}/${returnDateExists}`,
+    url: `http://192.168.40.32:6800/travels/${source}/${destination}/${departureDate}/${returnDateExists}`,
     data: {},
     dataType: "json",
     success: function (response) {
@@ -83,7 +83,7 @@ function handleConsultTravel(event) {
             <td data-title="transNumber">${transNumber}</td>
             <td data-title="toplace">${toplace}</td>
             <td data-title="Marcar Viagem">
-            <a href="pesquisa.php?travel=${id}&origem=${originProvinceName}&destino=${destinyProvinceName}&preco=${price}" 
+            <a href="agendar.php?travel=${id}&origem=${originProvinceName}&destino=${destinyProvinceName}&preco=${price}" 
               class="btn btn-primary btn-t-2 text-center"
               id="agendarViagemBtn"
               data-originProvince="${originProvinceName}"
@@ -108,7 +108,7 @@ function handleConsultTravel(event) {
 function appendCountryList() {
   $.ajax({
       type: "GET",
-      url: "http://192.168.4.97:6800/countries/list",
+      url: "http://192.168.40.32:6800/countries/list",
       data: {},
       dataType: "json",
       success: function (response) {
@@ -135,7 +135,7 @@ function handleCountryListChange() {
 function appendProvinceList(country_id) {
     $.ajax({
         type: "GET",
-        url: `http://192.168.4.97:6800/provinces/list/${country_id}`,
+        url: `http://192.168.40.32:6800/provinces/list/${country_id}`,
         data: {},
         dataType: "json",
         success: function (response) {

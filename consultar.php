@@ -25,8 +25,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-    <script src="src/js/jquery-3.6.0.min.js"></script>
-
 </head>
 
 <body>
@@ -74,15 +72,15 @@
     </div>
 
 
-    <div class="consultar_viagem " bg-ligth p-2>
-        <form id="form_consultar" onSubmit="return false;">
+    <div class="consultar_viagem">
+        <form id="form_consultar">
             <div class="form-group">
                 <div class="form-row">
                     <label for="my-input">CONTACTO:</label>
                     <div class=" input-group">
-                        <span class="input-group-text" id="contato">
+                        <span class="input-group-text" id="contacto">
                             <i class="bi bi-phone-fill"></i></span>
-                        <input type="tel" class="form-control" id="form-input" placeholder="900 000 000"
+                        <input type="tel" class="form-control" id="contact" placeholder="900 000 000"
                             aria-label="Contatos" aria-describedby="contato">
                     </div>
                 </div>
@@ -98,7 +96,7 @@
 
                 <br />
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
                 id="travelConsult" name="travelConsult" data-bs-target="#modalConsultarViagem">
                     Consultar Viagem
                 </button>
@@ -121,60 +119,57 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Id</th>
                                         <th scope="col">Origem</th>
                                         <th scope="col">Destino</th>
                                         <th scope="col">Horário</th>
+                                        <th scope="col">Data</th>
+                                        <th scope="col">Terminal</th>
                                         <th scope="col">Transporte</th>
+                                        <th scope="col">Price</th>
                                         <th scope="col">Nº Assentos</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                    </tr>
+                                <tbody id="searchResultTbl">
                                 </tbody>
                             </table>
                         </section>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Understood</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Confirmar</button>
                     </div>
                 </div>
             </div>
         </div>
 
+          <!-- Footer -->
+          <footer>
+              <div class="container">
+                  <div class="row text-center py-1">
+                      <div class="col-md-4">
+                      <img src="./assets/icons/smartphone.png" alt="Contactos" id="phone_1">
+                              <p style="margin-top: 17px; margin-left: 20px;">
+                                  <span style="color: #368ED6;">Fale Connosco</span>
+                                  <br>
+                                  +244 936 789 173 - 226 21 35 04
+                              </p>
+                      </div>
+                      <div class="col-md-4">
+                          <h3 class="text-center">CONTACT INFO</h3>
+                          <p>(888) 888-8888<br>
+                              email@nuno.com</p>
+                      </div>
+                      <br>
+                      <small>Copyrigth&copy;2021 - Interdígitos, LDA - Tecnologia de informação e serviços </small>
+                  </div>
+                  <!--- End of Row -->
+              </div>
+              <!--- End of Container -->
+          </footer>
+
+        <script src="src/js/jquery-3.6.0.min.js"></script>
+        <script src="src/js/consultar.js"></script>
 </body>
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row text-center py-1">
-            <div class="col-md-4">
-            <img src="./assets/icons/smartphone.png" alt="Contactos" id="phone_1">
-                    <p style="margin-top: 17px; margin-left: 20px;">
-                        <span style="color: #368ED6;">Fale Connosco</span>
-                        <br>
-                        +244 936 789 173 - 226 21 35 04
-                    </p>
-            </div>
-            <div class="col-md-4">
-                <h3 class="text-center">CONTACT INFO</h3>
-                <p>(888) 888-8888<br>
-                    email@nuno.com</p>
-            </div>
-            <br>
-            <small>Copyrigth&copy;2021 - Interdígitos, LDA - Tecnologia de informação e serviços </small>
-        </div>
-        <!--- End of Row -->
-    </div>
-    <!--- End of Container -->
-</footer>
 
 </html>
