@@ -76,28 +76,54 @@
                             <hr style="background-color: #368ED6; ">
                             <div class="teste p-2">
                                 <small>Selecione o Pais*</small>
-                                <select type="select" name="idTravel" id="country" class="form-control ipts" required>
+                                <select 
+                                    type="select" 
+                                    name="idTravel" 
+                                    id="country" 
+                                    class="form-control ipts"
+                                >
                                     <option value="0" disabled selected>Selecione um Pais</option>
                                 </select>
 
                                 <small>Origem*</small>
-                                <select type="select" name="idTravel" id="source" class="form-control ipts" required>
+                                <select 
+                                    type="select" 
+                                    name="idTravel" 
+                                    id="source" 
+                                    class="form-control ipts"
+                                >
                                     <option value="0">Selecione uma Província</option>
                                 </select>
 
                                 <small>Destino*</small>
-                                <select type="select" name="idTravel" id="destination" class="form-control ipts"
-                                    width="450px" required>
+                                <select 
+                                    type="select" 
+                                    name="idTravel" 
+                                    id="destination" 
+                                    class="form-control ipts"
+                                    width="450px" 
+                                >
                                     <option value="0">Selecione uma Província Destino</option>
                                 </select>
 
                                 <small>Data de Partida*</small>
-                                <input type="date" name="departureDate" id="departureDate" class="form-control ipts"
-                                    width="450px" required>
+                                <input 
+                                    type="date" 
+                                    name="departureDate" 
+                                    id="departureDate" 
+                                    class="form-control ipts"
+                                    width="450px" 
+                                    required>
 
                                 <small>Data de Chegada</small>
-                                <input type="date" name="returnDate" id="returnDate" class="form-control ipts"
-                                    width="450px" required>
+                                <input 
+                                    type="date" 
+                                    name="returnDate" 
+                                    id="returnDate" 
+                                    class="form-control ipts"
+                                    width="450px"
+                                    required
+                                >
 
                                 <button type="submit" class="t-2 form-control text-center" id="searchTravel"
                                     name="searchTravel" data-bs-toggle="modal" data-bs-target="#modalPesquisa">
@@ -207,6 +233,8 @@
     </script>
     <script src="src/js/jquery-3.6.0.min.js"></script>
     <script src="src/js/main.js"></script>
+    <script src="src/js/validator.js"></script>
+    
 </body>
 
 </html>

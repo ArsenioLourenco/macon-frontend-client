@@ -28,47 +28,29 @@
 
         const {
           id,
-          travelId: {
-            originProvince: { provinceName: originProvinceName },
-            destinyProvince: { provinceName: destinyProvinceName },
-            transportId: { transportNumber: transNumber },
-            price,
-            departureDate,
-            returnDate,
-            timeToGoTo,
-            timeToArrival,
-          },
           placesReserve,
           personalCodeAgend,
           userAgendCode,
           phoneNumber,
           status,
-          spotId: { spotName: spotNameAgend }
         } = data;
 
-        searchResultTable.html(`    <tr data-id="${id}">
-                                        <td data-title="originProvinceName">${originProvinceName}</td>
-                                        <td data-title="destinyProvinceName">${destinyProvinceName}</td>
-                                        <td data-title="time"> Partida: ${timeToGoTo} | Chegada: ${timeToArrival}</td>
-                                        <td data-title="dates"> Partida: ${departureDate} | Regresso: ${returnDate}</td>
+        searchResultTable.html(`    <tr>
+                                        <td data-title="id">${id}</td>
                                         <td data-title="toplace">${placesReserve}</td>
-                                        <td data-title="price">${price}</td>
                                         <td data-title="agenCode">${userAgendCode}</td>
-                                        <td data-title="spot">${spotNameAgend}</td>
-                                        <td data-title="transNumber">${transNumber}</td>
                                         <td data-title="phone">${phoneNumber}</td>
                                         <td data-title="status">${status}</td>
                                         <td data-title="code">${personalCodeAgend}</td>
                                         <td data-title="Marcar Viagem">
                                         <a href="agendar.php?travel=${id}&origem=${originProvinceName}&destino=${destinyProvinceName}&preco=${price}" 
-                                            class="btn btn-primary btn-t-2 text-center"
-                                            id="agendarViagemBtn"
-                                            data-originProvince="${originProvinceName}"
-                                            data-destinyProvince="${destinyProvinceName}"
-                                            data-time="${timeToGoTo},${timeToArrival}"
-                                            data-date="${departureDate},${returnDate}"
-                                            data-price="${price}"
-                                        >
+                                        class="btn btn-primary btn-t-2 text-center"
+                                        id="agendarViagemBtn"
+                                        data-originProvince="${originProvinceName}"
+                                        data-destinyProvince="${destinyProvinceName}"
+                                        data-time="${timeToGoTo},${timeToArrival}"
+                                        data-date="${departureDate},${returnDate}"
+                                        data-price="${price}">
                                             Agendar
                                         </a>
                                         </td>
@@ -80,4 +62,5 @@
       },
     });
   }
+  
 })(jQuery);

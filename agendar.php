@@ -88,7 +88,14 @@
                   <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Telefone</small>*</p>
                   <div class="input-group">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-lines-fill"></i></span>
-                    <input type="tel" class="form-control" name="phoneNumber" placeholder="Telefone" aria-label="Username" aria-describedby="basic">
+                    <input 
+                      type="number" 
+                      class="form-control" 
+                      name="phoneNumber" 
+                      placeholder="Telefone" 
+                      aria-label="Username" 
+                      aria-describedby="basic" 
+                      required maxlength="13">
                   </div>
                 </div>
                 
@@ -97,7 +104,14 @@
                   <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Email</small></p>
                   <div class="input-group ">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-at"></i></span>
-                    <input type="email" class="form-control" name="email" placeholder="Email" aria-label="Username" aria-describedby="basic">
+                    <input 
+                      type="email" 
+                      class="form-control" 
+                      ame="email" 
+                      placeholder="Email" 
+                      aria-label="Username" 
+                      aria-describedby="basic"
+                      required maxlength="50">
                   </div>
 
                 </div>
@@ -106,7 +120,13 @@
                   <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Quantidade de lugares</small>*</p>
                   <div class="input-group ">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
-                    <input type="number" class="form-control" name="placesReserve" placeholder="Quantidade de lugares" aria-label="Username" aria-describedby="basic">
+                    <input 
+                    type="number" 
+                    class="form-control" 
+                    name="placesReserve" 
+                    placeholder="Quantidade de lugares" 
+                    aria-label="Username" 
+                    aria-describedby="basic">
                   </div>
                 </div><br>
                 <button type="submit" class=" btn btn-primary " id="consulta" data-bs-toggle=""data-bs-target="" data-bs-whatever="">

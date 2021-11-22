@@ -80,8 +80,13 @@
                     <div class=" input-group">
                         <span class="input-group-text" id="contacto">
                             <i class="bi bi-phone-fill"></i></span>
-                        <input type="tel" class="form-control" id="contact" placeholder="900 000 000"
-                            aria-label="Contatos" aria-describedby="contato">
+                        <input 
+                            type="tel" 
+                            class="form-control" 
+                            id="contact" 
+                            placeholder="900 000 000"
+                            aria-label="Contatos" 
+                            aria-describedby="contato">
                     </div>
                 </div>
                 <br />
@@ -89,8 +94,13 @@
                     <label for="my-input">CÓDIGO DE AGENTAMENTO:</label>
                     <div class=" input-group">
                         <span class="input-group-text" id="Codigo-pessoal"><i class="bi bi-123"></i></span>
-                        <input type="password" class="form-control" id="form-input" placeholder="123 ABC "
-                            aria-label="Codigo_pessoal" aria-describedby="Codigo-pessoal">
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="code" 
+                            placeholder="123 ABC "
+                            aria-label="Codigo_pessoal" 
+                            aria-describedby="Codigo-pessoal">
                     </div>
                 </div>
 
@@ -119,14 +129,12 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Origem</th>
-                                        <th scope="col">Destino</th>
-                                        <th scope="col">Horário</th>
-                                        <th scope="col">Data</th>
-                                        <th scope="col">Terminal</th>
-                                        <th scope="col">Transporte</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Nº Assentos</th>
+                                        <th scope="col">id</th>
+                                        <th scope="col">places Reserved</th>
+                                        <th scope="col">User Code</th>
+                                        <th scope="col">Phone Number</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Personal Code</th>
                                     </tr>
                                 </thead>
                                 <tbody id="searchResultTbl">
