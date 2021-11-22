@@ -43,16 +43,7 @@
                                         <td data-title="status">${status}</td>
                                         <td data-title="code">${personalCodeAgend}</td>
                                         <td data-title="Marcar Viagem">
-                                        <a href="agendar.php?travel=${id}&origem=${originProvinceName}&destino=${destinyProvinceName}&preco=${price}" 
-                                        class="btn btn-primary btn-t-2 text-center"
-                                        id="agendarViagemBtn"
-                                        data-originProvince="${originProvinceName}"
-                                        data-destinyProvince="${destinyProvinceName}"
-                                        data-time="${timeToGoTo},${timeToArrival}"
-                                        data-date="${departureDate},${returnDate}"
-                                        data-price="${price}">
-                                            Agendar
-                                        </a>
+                                      
                                         </td>
                                     </tr>`);
       },
@@ -62,5 +53,5 @@
       },
     });
   }
-  
+
 })(jQuery);
