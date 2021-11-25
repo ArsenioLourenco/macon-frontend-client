@@ -85,7 +85,7 @@
                                           <td data-title="status">${status}</td>
                                           <td data-title="code">${personalCodeAgend}</td>
                                           <td data-title="Marcar Viagem">
-                                        
+                                          <button type="reset" class="btn btn-primary"><i class="bi bi-trash"></i></button>
                                           </td>
                                       </tr>`);
         },
@@ -97,6 +97,10 @@
     }
   }
 })(jQuery);
+
+
+
+
 
 
 
