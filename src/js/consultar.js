@@ -28,10 +28,10 @@
 
         const {
           id,
-          travelId: {
-            originProvince: { provinceName: originProvinceName },
-            destinyProvince: { provinceName: destinyProvinceName },
-            transportId: { transportNumber: transNumber },
+          travel: {
+            originProvince:{ provinceName: originProvinceName},
+            destinyProvince:{ provinceName: destinyProvinceName},
+            transport:{ transport: transportNumber},
             price,
             departureDate,
             returnDate,
@@ -43,7 +43,6 @@
           userAgendCode,
           phoneNumber,
           status,
-          spotId: { spotName: spotNameAgend }
         } = data;
 
         searchResultTable.html(`    <tr data-id="${id}">
@@ -54,8 +53,7 @@
                                         <td data-title="toplace">${placesReserve}</td>
                                         <td data-title="price">${price}</td>
                                         <td data-title="agenCode">${userAgendCode}</td>
-                                        <td data-title="spot">${spotNameAgend}</td>
-                                        <td data-title="transNumber">${transNumber}</td>
+                                        <td data-title="transNumber">${transportNumber}</td>
                                         <td data-title="phone">${phoneNumber}</td>
                                         <td data-title="status">${status}</td>
                                         <td data-title="code">${personalCodeAgend}</td>
