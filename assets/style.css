@@ -1,11 +1,31 @@
 body {
   margin: 0px;
   font-size: 13pt;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Roboto, sans-serif !important;
+}
+.gradient-banner {
+  padding: 100px 0 170px;
+  position: relative;
+  overflow: hidden;
+}
+.gradient-banner::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    45deg,
+    #009ec5 0%,
+    #2e7eed 20%,
+    #02225b 50%
+  );
 }
 .logotype {
-  width: 228px;
+  width: 220px;
   height: 77px;
   left: 136px;
   top: 32px;
@@ -20,7 +40,14 @@ body {
 .ipts {
   background-color: rgba(196, 196, 196, 0.08);
   width: 500px;
-  height: 64px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.ipts-text-area {
+  background-color: rgba(196, 196, 196, 0.08);
+  width: 500px;
+  height: 150px;
   border-radius: 8px;
 }
 
@@ -94,9 +121,9 @@ body {
   width: 64px;
   height: 64px;
   margin-top: 17px;
-   margin-left: 20px;
+  margin-left: 20px;
 }
-#imagem{
+#imagem {
   float: left;
 }
 
@@ -141,73 +168,72 @@ small {
   line-height: 19px;
   color: #1c1c1c;
 }
-   /* Table style */
-   @media only screen and (max-width: 800px) {
-    #no-more-tables tbody,
-    #no-more-tables tr,
-    #no-more-tables td {
-      display:block;
-    }
-    #no-more-tables thead tr {
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
-    }
-    #no-more-tables td {
-      position: relative;
-      padding-left: 50%;
-      border: none;
-      border-bottom: 1px solid #eee;
-    } 
-    #no-more-tables td:before {
-      content: attr(data-title);
-      position: absolute;
-      left: 6px;
-      font-weight: bold;
-    }
-    #no-more-tables tr {
-      border-bottom: 1px solid #ccc;
-    }
+/* Table style */
+@media only screen and (max-width: 800px) {
+  #no-more-tables tbody,
+  #no-more-tables tr,
+  #no-more-tables td {
+    display: block;
   }
-
-  /* Botão Marcar Style */
-
-  .btn-marcar {
-    height: 100%;
-    border: none;
-    border-radius: 4px;
-    font-family: Roboto;
-    font-weight: 350;
-    font-size: .85rem;
-    line-height: 23px;
-    color: #fcfcfc;
+  #no-more-tables thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  #no-more-tables td {
     position: relative;
-    padding: 6px;
-    text-decoration: none;
+    padding-left: 50%;
+    border: none;
+    border-bottom: 1px solid #eee;
   }
+  #no-more-tables td:before {
+    content: attr(data-title);
+    position: absolute;
+    left: 6px;
+    font-weight: bold;
+  }
+  #no-more-tables tr {
+    border-bottom: 1px solid #ccc;
+  }
+}
 
-  .navbar-nav {
-    margin-left: 800px;
-  }
+/* Botão Marcar Style */
 
-  #ponto{
-    color: red;
-  }
+.btn-marcar {
+  height: 100%;
+  border: none;
+  border-radius: 4px;
+  font-family: Roboto;
+  font-weight: 350;
+  font-size: 0.85rem;
+  line-height: 23px;
+  color: #fcfcfc;
+  position: relative;
+  padding: 6px;
+  text-decoration: none;
+}
 
-  .footers{
-    margin-top: 150px;
-  }
-  footer {
-    background-color: #f3fcfa;
-    background-size: cover;
-    color: rgb(0, 0, 0);
-   
-  }
+.navbar-nav {
+  margin-left: 800px;
+}
 
-  #basic{
-    border-bottom:2px outset rgb(7, 148, 241);
-  }
-.consultar_viagem{
+#ponto {
+  color: red;
+}
+
+.footers {
+  margin-top: 150px;
+}
+footer {
+  background-color: #f3fcfa;
+  background-size: cover;
+  color: rgb(0, 0, 0);
+}
+
+#basic {
+  border-bottom: 2px outset rgb(7, 148, 241);
+}
+.consultar_viagem {
   position: relative;
   top: 25%;
   left: 50%;
@@ -216,16 +242,16 @@ small {
   background: rgb(210, 224, 241);
   border-radius: 10px;
 }
-.consultar_viagem form{
+.consultar_viagem form {
   padding: 25px 50px 25px 50px;
   box-sizing: border-box;
 }
-form .input-group{
+form .input-group {
   position: relative;
-  border-bottom: 2px ;
+  border-bottom: 2px;
 }
 
-.input-group form-control{
+.input-group form-control {
   width: 100%;
   padding: 0 5px;
   height: 50px;
@@ -236,11 +262,11 @@ form .input-group{
   outline: none;
 }
 
-label{
+label {
   position: relative;
   color: #adadad;
 }
 
-.consultar_viagem button{
+.consultar_viagem button {
   width: 100%;
 }

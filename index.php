@@ -1,74 +1,47 @@
-<?php
-  if(isset($POST['consultTravel'])){
-    echo var_dump($POST['consultTravel']);
-  }
-?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<?php require_once('./src/pages/headers/index.php') ?>
 <head>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Macon - Cliente</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/style.css">
-    <style>
-
-
-    </style>
+    <link rel="stylesheet" href="./assets/home.css">
 </head>
+<section class="section gradient-banner">
+	<div class="shapes-container">
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="1500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-up-right" data-aos-duration="1000" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="1000" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="1000" data-aos-delay="100"></div>
+		<div class="shape" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300"></div>
+		<div class="shape" data-aos="fade-down-right" data-aos-duration="500" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-down-right" data-aos-duration="500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="zoom-out" data-aos-duration="2000" data-aos-delay="500"></div>
+		<div class="shape" data-aos="fade-up-right" data-aos-duration="500" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0"></div>
+		<div class="shape" data-aos="fade-down" data-aos-duration="500" data-aos-delay="0"></div>
+		<div class="shape" data-aos="fade-up-right" data-aos-duration="500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="0"></div>
+	</div>
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-md-6 order-2 order-md-1 text-center text-md-left">
+				<h1 class="text-white font-weight-bold mb-4">A Carteira Digital Que Facilitará a tua Vida.</h1>
+				<p class="text-white mb-5">Baixe a Aplicação, disfrute de nossos serviços e facilite a sua vida.</p>
+				<a href="#" class="btn btn-main-md">BAIXE AGORA!</a>
+			</div>
+			<div class="col-md-6 text-center order-1 order-md-2">
+				<img class="img-fluid" src="images/mobile.png" alt="screenshot">
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of Hero Section  ====-->
 
-<body>
-    <div class="row col-12">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <div class="logotype">
-                    <a class="nav-link active" aria-current="page" href="index.php"><img
-                            src="./assets/img/LOGO-MACON.png" alt="Logotipo Macon" id="logotype" style="height: 60px;">
-                    </a>
-                    <br>
-                    <span style="top: 80px; position: absolute; margin-bottom: 10px;" id="descLogo">Consulte & Agende
-                        Aqui Suas
-                        Viagens</span>
-                </div>
-                <div class="collapse navbar-collapse dis" id="navbarText" style="display:flex;">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="consultar.php">Consultar Viagem</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre Nós</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contactos</a>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-        </nav>
-    </div>
-
-
-    <div class="container t-1 p-4">
-        <div class="row">
+<section class="section pt-0 position-relative pull-top">
+	<div class="container">
+		<div class="rounded shadow p-5 bg-white">
+            <div class="row">
             <div class="col colu_1">
-
                 <!-- As a link -->
-
                 <div class="" id="navbarToggleExternalContent">
                     <div class="bg-ligth p-2">
                         <form action="/src/js/main" method="post" id="form_1">
@@ -193,48 +166,40 @@
                     <p id="descTitle1">Agende as suas viajens a partir da nossa plataforma <br>
                         ou consulte as viagens que já foram agendadas e reserve seu lugar.
                     </p>
-                    <a href="agendar.php" class="btn btn-primary text-center" id="agendarViagemBtn">
-                        Agendar Viagem
+                    <a href="agendar.php" id="agendarViagemBtn">
+                        <!-- <button type="submit" class="t-2 form-control text-center" id="searchTravel" name="searchTravel" data-bs-toggle="modal" data-bs-target="#modalPesquisa">
+                            <span id="search">
+                            </span>
+                            Agendar Viagem
+                        </button> -->
                     </a>
                 </div>
             </div>
         </div><br><br>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row text-center py-5">
-                <div class="col-md-4">
-                    <img src="./assets/icons/smartphone.png" alt="Contactos" id="phone_1">
-                    <p style="margin-top: 17px; margin-left: 20px;">
-                        <span style="color: #368ED6;">Fale Connosco</span>
-                        <br>
-                        +244 936 789 173 - 226 21 35 04
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <h3 class="text-center">CONTACT INFO</h3>
-                    <p>(888) 888-8888<br>
-                        email@nuno.com</p>
-                </div>
-                <br>
-                <small>Copyrigth&copy;2021 - Interdígitos, LDA - Tecnologia de informação e serviços </small>
-            </div>
-            <!--- End of Row -->
-        </div>
-        <!--- End of Container -->
-    </footer>
-
-
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
-    <script src="src/js/jquery-3.6.0.min.js"></script>
-    <script src="src/js/main.js"></script>
-    <script src="src/js/validator.js"></script>
+    </div><br>
+				<!-- <div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+                    <img src="./assets/svg/travels.svg" alt="" class="img-icon" style="width: 15%;">
+					<h3 class="mt-4 text-capitalize h5 ">Quais Locais Viajamos?</h3>
+					<p class="regular text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non, recusandae
+						tempore ipsam dignissimos molestias.</p>
+				</div>
+				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+                    <img src="./assets/svg/agend.svg" alt="" class="img-icon" style="width: 15%;">
+					<h3 class="mt-4 text-capitalize h5 ">Como Reservar seu Lugar?</h3>
+					<p class="regular text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non, recusandae
+						tempore ipsam dignissimos molestias.</p>
+				</div>
+				<div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
+                    <img src="./assets/svg/pay.svg" alt="" class="img-icon" style="width: 15%;">
+					<h3 class="mt-4 text-capitalize h5 ">Como Pagar?</h3>
+					<p class="regular text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non, recusandae
+						tempore ipsam dignissimos molestias.</p>
+					</p>
+				</div> -->
+			</div>
+		</div>
+	</div>
+</section>
     
-</body>
 
-</html>
+<?php require_once('./src/pages/footers/index.php') ?>
