@@ -47,6 +47,10 @@ function handleConsultTravel(event) {
       destination = $("#destination option:selected").val(),
       departureDate = $("#departureDate").val(),
       returnDate = $("#returnDate").val();
+  
+  if(source == '' || destination == '' || departureDate == '' || returnDate == ''){
+    return window.alert('Precisa Selecionar os Campos');
+  }
 
   let returnDateExists = returnDate != null ? returnDate : '';
 

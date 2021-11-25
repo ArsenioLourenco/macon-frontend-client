@@ -75,6 +75,18 @@
     <div class="consultar_viagem">
         <form id="form_consultar">
             <div class="form-group">
+            <div class="form-row">
+                    <label for="my-input">SELECIONA O TIPO DE CONSULTA:</label>
+                    <div class=" input-group">
+                        <span class="input-group-text" id="Codigo-pessoal"><i class="option"></i></span>
+                        
+                        <Select name="travelConsult" id="travelConsult">
+                            <option value="contact">Por Telefone</option>
+                            <option value="codeReserve">Por Código de Reserva</option>
+                        </Select>
+                    </div>
+                </div>
+                <br />
                 <div class="form-row">
                     <label for="my-input">CONTACTO:</label>
                     <div class=" input-group">
@@ -83,28 +95,13 @@
                         <input 
                             type="tel" 
                             class="form-control" 
-                            id="contact" 
-                            placeholder="900 000 000"
+                            id="valueToConsult" 
+                            placeholder="Código de Reserved ou Contacto"
                             aria-label="Contatos" 
                             aria-describedby="contato">
                     </div>
                 </div>
-                <br />
-                <div class="form-row">
-                    <label for="my-input">CÓDIGO DE AGENTAMENTO:</label>
-                    <div class=" input-group">
-                        <span class="input-group-text" id="Codigo-pessoal"><i class="bi bi-123"></i></span>
-                        <input 
-                            type="text" 
-                            class="form-control" 
-                            id="code" 
-                            placeholder="123 ABC "
-                            aria-label="Codigo_pessoal" 
-                            aria-describedby="Codigo-pessoal">
-                    </div>
-                </div>
-
-                <br />
+                <br/> 
                 <!-- Button trigger modal -->
                 <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
                 id="travelConsult" name="travelConsult" data-bs-target="#modalConsultarViagem">

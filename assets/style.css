@@ -201,7 +201,9 @@ small {
     background-color: #f3fcfa;
     background-size: cover;
     color: rgb(0, 0, 0);
-   
+  }
+  .container{
+    max-width: 1170;
   }
 
   #basic{

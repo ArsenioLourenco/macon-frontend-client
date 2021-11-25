@@ -21,10 +21,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css">
+    
     <style>
-
-
     </style>
+
+    
 </head>
 
 <body>
@@ -91,6 +92,7 @@
                                     name="idTravel" 
                                     id="source" 
                                     class="form-control ipts"
+                                    required class="form-control"
                                 >
                                     <option value="0">Selecione uma Província</option>
                                 </select>
@@ -113,7 +115,7 @@
                                     id="departureDate" 
                                     class="form-control ipts"
                                     width="450px" 
-                                    required>
+                                >
 
                                 <small>Data de Chegada</small>
                                 <input 
@@ -122,7 +124,6 @@
                                     id="returnDate" 
                                     class="form-control ipts"
                                     width="450px"
-                                    required
                                 >
 
                                 <button type="submit" class="t-2 form-control text-center" id="searchTravel"
@@ -234,7 +235,8 @@
     <script src="src/js/jquery-3.6.0.min.js"></script>
     <script src="src/js/main.js"></script>
     <script src="src/js/validator.js"></script>
-    
+    <script src="src/js/jquery.validate.min.js"></script>
+    <script src="src/js/localization/messages_pt_PT.js"></script>
 </body>
 
 </html>

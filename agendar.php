@@ -178,6 +178,8 @@
       crossorigin="anonymous"></script>
     <script src="src/js/jquery-3.6.0.min.js"></script>
     <script src="src/js/main.js"></script>
+    <script src="src/js/localization/messages_pt_PT.js"></script>
+    
 </body>
 
 </html>
