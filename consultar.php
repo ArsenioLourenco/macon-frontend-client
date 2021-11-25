@@ -16,7 +16,7 @@
                     <select name="typeConsult" id="typeConsult" class="form-control ipts" required>
                         <option value="" disabled selected>Selecione Aqui</option>
                         <option value="contact">Por nº de Telefone</option>
-                        <option value="personalCode">Por nº código de Agendamento</option>
+                        <option value="codeReserve">Por nº código de Agendamento</option>
                     </select>
                     
                     <small for="">Escreva aqui<span style="color: red">*</span></small><br>
