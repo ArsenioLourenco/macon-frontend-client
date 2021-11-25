@@ -45,8 +45,9 @@
                                           <td data-title="status">${status}</td>
                                           <td data-title="code">${personalCodeAgend}</td>
                                           <td data-title="Marcar Viagem">
-                                        
+                                          <button type="reset" class="btn btn-primary"><i class="bi bi-trash"></i></button>
                                           </td>
+                                          
                                       </tr>`);
         },
         error: function (response) {
@@ -57,7 +58,7 @@
     }else if( typeConsult == 'codeReserve'){
       $.ajax({
         type: "GET",
-        url: `http://192.168.40.32:6800/client/travel/${optionSelected}`,
+        url: `http://192.168.40.32:6800/client/travel/personalCode/${optionSelected}`,
         data: {},
         dataType: "json",
         success: function (response) {
