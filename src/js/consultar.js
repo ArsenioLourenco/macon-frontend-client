@@ -12,11 +12,11 @@
 
     console.log("---Serialize: ", $(this).serialize());
 
-    let contact = $("#contact").val();
+    let reference = $("#contact").val();
 
     $.ajax({
       type: "GET",
-      url: `http://192.168.40.32:6800/client/travel/${contact}`,
+      url: `http://192.168.40.32:6800/client/travel/${reference}`,
       data: {},
       dataType: "json",
       success: function (response) {
@@ -29,14 +29,15 @@
         const {
           id,
           travel: {
-            originProvince:{ provinceName: originProvinceName},
-            destinyProvince:{ provinceName: destinyProvinceName},
-            transport:{ transport: transportNumber},
-            price,
+            originProvince:{ provinceName: originProvince},
+            destinyProvince:{ provinceName: destinyProvince},
+            transport:{ transportNumber: transportNumber},
+            spot: {spotName: spotName},
             departureDate,
             returnDate,
             timeToGoTo,
             timeToArrival,
+            price
           },
           placesReserve,
           personalCodeAgend,
@@ -45,28 +46,28 @@
           status,
         } = data;
 
-        searchResultTable.html(`    <tr data-id="${id}">
-                                        <td data-title="originProvinceName">${originProvinceName}</td>
-                                        <td data-title="destinyProvinceName">${destinyProvinceName}</td>
-                                        <td data-title="time"> Partida: ${timeToGoTo} | Chegada: ${timeToArrival}</td>
-                                        <td data-title="dates"> Partida: ${departureDate} | Regresso: ${returnDate}</td>
-                                        <td data-title="toplace">${placesReserve}</td>
+        searchResultTable.html(`<tr data-id="${id}">
+                                        <td data-title="originProvinceName">${originProvince}</td>
+                                        <td data-title="destinyProvinceName">${destinyProvince}</td>
+                                        <td data-title="time"> Partida: ${timeToGoTo} </br> Chegada: ${timeToArrival}</td>
+                                        <td data-title="dates"> Partida: ${departureDate} </br> Regresso: ${returnDate}</td>
+                                        <td data-title="spotName">${spotName}</td>
+                                        <td data-title="transportNumber">${transportNumber}</td>
                                         <td data-title="price">${price}</td>
+                                        <td data-title="toplace">${placesReserve}</td>
                                         <td data-title="agenCode">${userAgendCode}</td>
-                                        <td data-title="transNumber">${transportNumber}</td>
                                         <td data-title="phone">${phoneNumber}</td>
                                         <td data-title="status">${status}</td>
                                         <td data-title="code">${personalCodeAgend}</td>
                                         <td data-title="Marcar Viagem">
-                                        <a href="agendar.php?travel=${id}&origem=${originProvinceName}&destino=${destinyProvinceName}&preco=${price}" 
+                                        <a href="agendar.php?travel=${id}&origem=${originProvince}&destino=${destinyProvince}&preco=${price}" 
                                             class="btn btn-primary btn-t-2 text-center"
                                             id="agendarViagemBtn"
-                                            data-originProvince="${originProvinceName}"
-                                            data-destinyProvince="${destinyProvinceName}"
+                                            data-originProvince="${originProvince}"
+                                            data-destinyProvince="${destinyProvince}"
                                             data-time="${timeToGoTo},${timeToArrival}"
                                             data-date="${departureDate},${returnDate}"
-                                            data-price="${price}"
-                                        >
+                                            data-price="${price}">
                                             Agendar
                                         </a>
                                         </td>

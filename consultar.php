@@ -17,9 +17,7 @@
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="/assets/consultarStyle.css">
     <link rel="stylesheet" href="/assets/bootstrap-icons/font/bootstrap-icons.css">
-    <style>
-
-    </style>
+    <style> </style>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -76,21 +74,12 @@
         <form id="form_consultar">
             <div class="form-group">
                 <div class="form-row">
-                    <label for="my-input">CONTACTO:</label>
+                    <label for="my-input">CONTACTO/CÓDIGO DE AGENTAMENTO:</label>
                     <div class=" input-group">
                         <span class="input-group-text" id="contacto">
                             <i class="bi bi-phone-fill"></i></span>
-                        <input type="tel" class="form-control" id="contact" placeholder="900 000 000"
+                        <input type="tel" class="form-control" id="contact" placeholder="900 000 000/123 ABC"
                             aria-label="Contatos" aria-describedby="contato">
-                    </div>
-                </div>
-                <br />
-                <div class="form-row">
-                    <label for="my-input">CÓDIGO DE AGENTAMENTO:</label>
-                    <div class=" input-group">
-                        <span class="input-group-text" id="Codigo-pessoal"><i class="bi bi-123"></i></span>
-                        <input type="password" class="form-control" id="form-input" placeholder="123 ABC "
-                            aria-label="Codigo_pessoal" aria-describedby="Codigo-pessoal">
                     </div>
                 </div>
 
