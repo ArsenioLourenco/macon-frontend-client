@@ -3,7 +3,30 @@
     <link rel="stylesheet" href="./assets/home.css">
 </head>
 <section class="section gradient-banner">
-	<div class="shapes-container">
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/img/bg-macon-frota.jpg" class="d-block w-100" alt="projeto macon">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/bg-macon-frota.jpg" class="d-block w-100" alt="projeto macon">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/bg-macon-frota.jpg" class="d-block w-100" alt="projeto macon">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+	<!-- <div class="shapes-container">
 		<div class="shape" data-aos="fade-down-left" data-aos-duration="1500" data-aos-delay="100"></div>
 		<div class="shape" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100"></div>
 		<div class="shape" data-aos="fade-up-right" data-aos-duration="1000" data-aos-delay="200"></div>
@@ -32,7 +55,7 @@
 				<img class="img-fluid" src="images/mobile.png" alt="screenshot">
 			</div>
 		</div>
-	</div>
+	</div> -->
 </section>
 <!--====  End of Hero Section  ====-->
 
@@ -138,6 +161,7 @@
                                             </tr>
                                         </thead>
                                         <tbody id="searchResultTbl">
+                                            <!-- Dados da Tabela -->
                                         </tbody>
                                     </table>
                                 </div>
@@ -149,6 +173,7 @@
                     </div>
                 </div>
             </div>
+<!-- End of Modal Content -->
 
             <div class="col p-3">
                 <p>
@@ -199,6 +224,51 @@
 			</div>
 		</div>
 	</div>
+</section>
+
+<section>
+    <div>
+       <div class="container">
+           <div class="row">
+               <div class="col-sm-12 text-dark text-center my-3">
+                   <h1>Destinos em Destaque</h1>
+               </div>
+           </div>
+           <div class="row">
+               <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div   div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div   div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div   div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            </div>
+           </div>
+           </div>
+       </div> 
+    </div>
 </section>
     
 

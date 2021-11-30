@@ -37,17 +37,16 @@
             status,
           } = data;
 
-          searchResultTable.html(`    <tr>
-                                          <td data-title="id">${id}</td>
-                                          <td data-title="toplace">${placesReserve}</td>
-                                          <td data-title="agenCode">${userAgendCode}</td>
-                                          <td data-title="phone">${phoneNumber}</td>
-                                          <td data-title="status">${status}</td>
-                                          <td data-title="code">${personalCodeAgend}</td>
-                                          <td data-title="Marcar Viagem">
-                                          <button type="reset" class="btn btn-primary"><i class="bi bi-trash"></i></button>
-                                          </td>
-                                          
+          searchResultTable.html(`<tr>
+                                      <td data-title="id">${id}</td>
+                                      <td data-title="toplace">${placesReserve}</td>
+                                      <td data-title="agenCode">${userAgendCode}</td>
+                                      <td data-title="phone">${phoneNumber}</td>
+                                      <td data-title="status">${status}</td>
+                                      <td data-title="code">${personalCodeAgend}</td>
+                                      <td data-title="Marcar Viagem">
+                                      <button type="reset" class="btn btn-primary"><i class="bi bi-trash"></i></button>
+                                      </td>    
                                       </tr>`);
         },
         error: function (response) {

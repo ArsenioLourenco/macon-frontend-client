@@ -51,6 +51,7 @@ body {
   border-radius: 8px;
 }
 
+
 #consultTravel {
   background-color: rgba(196, 196, 196, 0.08);
   width: 350px;
@@ -197,7 +198,17 @@ small {
   }
 }
 
-/* Botão Marcar Style */
+  .footers{
+    margin-top: 150px;
+  }
+  footer {
+    background-color: #f3fcfa;
+    background-size: cover;
+    color: rgb(0, 0, 0);
+  }
+  .container{
+    max-width: 1170;
+  }
 
 .btn-marcar {
   height: 100%;
@@ -270,3 +281,4 @@ label {
 .consultar_viagem button {
   width: 100%;
 }
+
