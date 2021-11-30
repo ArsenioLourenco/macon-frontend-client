@@ -65,6 +65,9 @@
     <a class="navbar-brand" href="index.php">                        
         <img src="./assets/img/LOGO-MACON.png" alt="Logotipo Macon" id="logotype" style="height: auto; width: auto">
     </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <!-- <span style="top: 80px; position: absolute; margin-bottom: 10px;" id="descLogo">Consulte & Agende Aqui Suas Viagens</span> -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">

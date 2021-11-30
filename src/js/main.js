@@ -279,7 +279,7 @@ function consult() {
                                           <td data-title="phone">${phoneNumber}</td>
                                           <td data-title="status">${status}</td>
                                           <td data-title="code">${personalCodeAgend}</td>
-                                          <td data-title="Marcar Viagem">
+                                          <td data-title="Agendar Viagem">
                                           <button type="reset" class="btn btn-primary"><i class="bi bi-trash"></i></button>
                                           </td>
                                       </tr>`);
