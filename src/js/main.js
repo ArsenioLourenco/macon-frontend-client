@@ -61,12 +61,12 @@ function handleConsultTravel(event) {
       const { data } = response;
 
       searchResultTable.find('tr').remove();
-
+      console.log(data);
       data.map(({
         id, 
         originProvince: { provinceName: originProvinceName }, 
         destinyProvince: { provinceName: destinyProvinceName },
-        transport: { transportNumber: transNumber, totalPlace: toplace},
+        transport: { transportNumber: transNumber, totalPlace},
         price,
         timeToArrival,
         timeToGoTo,
@@ -81,11 +81,12 @@ function handleConsultTravel(event) {
             <td data-title="dates"> Partida: ${departureDate} | Regresso: ${returnDate}</td>
             <td data-title="price">${price}</td>
             <td data-title="transNumber">${transNumber}</td>
-            <td data-title="toplace">${toplace}</td>
+            <td data-title="totalPlace">${totalPlace}</td>
             <td data-title="Marcar Viagem">
             <a href="agendar.php?travel=${id}&origem=${originProvinceName}&destino=${destinyProvinceName}&preco=${price}" 
               class="btn btn-primary btn-t-2 text-center"
               id="agendarViagemBtn"
+              style="color: #FFFFFF !important;"
               data-originProvince="${originProvinceName}"
               data-destinyProvince="${destinyProvinceName}"
               data-time="${timeToGoTo},${timeToArrival}"
@@ -192,6 +193,107 @@ function getFromParamsTravelData() {
   }
 }
 
+
+function consult() {
+  const consultTravelBtn = $("#travelConsult"),
+    searchResultTable = $("#searchResultTbl");
+
+  consultTravelBtn.on("click", travelConsult);
+
+  // Agend Travel Submition
+  $("#form_consultar").on("submit", travelConsult);
+
+  function travelConsult(event) {
+    event.preventDefault();
+
+    console.log("---Serialize: ", $(this).serialize());
+
+    let optionSelected = $("#valueToConsult").val();
+    let typeConsult = $("#travelConsult").val();
+    
+    if(typeConsult == 'contact'){
+      $.ajax({
+        type: "GET",
+        url: `http://192.168.40.32:6800/client/travel/${optionSelected}`,
+        data: {},
+        dataType: "json",
+        success: function (response) {
+          console.log("Success: ", response, response.data);
+
+          const { data } = response;
+
+          searchResultTable.find("tr").remove();
+
+          const {
+            id,
+            placesReserve,
+            personalCodeAgend,
+            userAgendCode,
+            phoneNumber,
+            status,
+          } = data;
+
+          searchResultTable.html(`    <tr>
+                                          <td data-title="id">${id}</td>
+                                          <td data-title="toplace">${placesReserve}</td>
+                                          <td data-title="agenCode">${userAgendCode}</td>
+                                          <td data-title="phone">${phoneNumber}</td>
+                                          <td data-title="status">${status}</td>
+                                          <td data-title="code">${personalCodeAgend}</td>
+                                          <td data-title="Marcar Viagem">
+                                          <button type="reset" class="btn btn-primary"><i class="bi bi-trash"></i></button>
+                                          </td>    
+                                      </tr>`);
+        },
+        error: function (response) {
+          //  To do:Retornar uma mensagem de Não Temos Essa Viagem Agendada.
+          console.log("Error: ", response);
+        },
+      });
+    }else if( typeConsult == 'codeReserve'){
+      $.ajax({
+        type: "GET",
+        url: `http://192.168.40.32:6800/client/travel/personalCode/${optionSelected}`,
+        data: {},
+        dataType: "json",
+        success: function (response) {
+          console.log("Success: ", response, response.data);
+
+          const { data } = response;
+
+          searchResultTable.find("tr").remove();
+
+          const {
+            id,
+            placesReserve,
+            personalCodeAgend,
+            userAgendCode,
+            phoneNumber,
+            status,
+          } = data;
+
+          searchResultTable.html(`    <tr>
+                                          <td data-title="id">${id}</td>
+                                          <td data-title="toplace">${placesReserve}</td>
+                                          <td data-title="agenCode">${userAgendCode}</td>
+                                          <td data-title="phone">${phoneNumber}</td>
+                                          <td data-title="status">${status}</td>
+                                          <td data-title="code">${personalCodeAgend}</td>
+                                          <td data-title="Agendar Viagem">
+                                          <button type="reset" class="btn btn-primary"><i class="bi bi-trash"></i></button>
+                                          </td>
+                                      </tr>`);
+        },
+        error: function (response) {
+          //  To do:Retornar uma mensagem de Não Temos Essa Viagem Agendada.
+          console.log("Error: ", response);
+        },
+      });
+    }
+  }
+}(jQuery);
+
+
 function verifySelectedTravel() {
   getFromParamsTravelData()
 }
@@ -199,6 +301,7 @@ function verifySelectedTravel() {
 // Invoke functions
 appendCountryList();
 verifySelectedTravel();
+consult();
 
 
 

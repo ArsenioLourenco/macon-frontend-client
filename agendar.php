@@ -9,7 +9,7 @@
                   <p class="" id="ponto" style="margin-bottom: 0;"><small>Origem</small>*</p>
                   <div class="input-group">
                     <span class="input-group-text" id="basic-addon1"></i></span>
-                    <input id="agenda-viagem-origem" type="text" class="form-control" name="origem" placeholder="Origem" aria-label="Username" aria-describedby="basic">
+                    <input id="agenda-viagem-origem" type="text" class="form-control ipts" name="origem" placeholder="Origem" aria-label="Username" aria-describedby="basic">
                   </div>
                 </div>
 
@@ -17,19 +17,26 @@
                   <p class="" id="ponto" style="margin-bottom: 0;"><small>Destino</small>*</p>
                   <div class="input-group">
                     <span class="input-group-text" id="basic-addon1"></i></span>
-                    <input id="agenda-viagem-destino" type="text" class="form-control" name="destino" placeholder="Destino" aria-label="Username" aria-describedby="basic">
+                    <input id="agenda-viagem-destino" type="text" class="form-control ipts" name="destino" placeholder="Destino" aria-label="Username" aria-describedby="basic">
                   </div>
                 </div>
-
                 <div class="form-group">
-                  <p class="" id="ponto" style="margin-bottom: 0;"><small>Preço</small>*</p>
+                  
+                  <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Primeiro e Ultimo Nome</small>*</p>
                   <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Kz</i></i></span>
-                    <input id="agenda-viagem-preco" type="text" class="form-control" name="destino" placeholder="Preço" aria-label="Username" aria-describedby="basic">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-at"></i></span>
+                    <input 
+                      type="text" 
+                      class="form-control ipts" 
+                      ame="email" 
+                      placeholder="Primeiro e Ultimo Nome" 
+                      aria-label="Username" 
+                      aria-describedby="basic"
+                      required maxlength="50">
                   </div>
-                </div>
 
-                <input id="agenda-viagem-id" type="hidden" class="form-control" name="travelId" placeholder="Trajecto" aria-label="Username" aria-describedby="basic">
+
+                <input id="agenda-viagem-id" type="hidden" class="form-control ipts" name="travelId" placeholder="Trajecto" aria-label="Username" aria-describedby="basic">
 
                 <div class="form-group">
                   <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Telefone</small>*</p>
@@ -37,7 +44,7 @@
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-lines-fill"></i></span>
                     <input 
                       type="number" 
-                      class="form-control" 
+                      class="form-control ipts" 
                       name="phoneNumber" 
                       placeholder="Telefone" 
                       aria-label="Username" 
@@ -53,7 +60,7 @@
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-at"></i></span>
                     <input 
                       type="email" 
-                      class="form-control" 
+                      class="form-control ipts" 
                       ame="email" 
                       placeholder="Email" 
                       aria-label="Username" 
@@ -69,21 +76,35 @@
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
                     <input 
                     type="number" 
-                    class="form-control" 
+                    class="form-control ipts" 
                     name="placesReserve" 
                     placeholder="Quantidade de lugares" 
                     aria-label="Username" 
                     aria-describedby="basic">
                   </div>
+
+                  <div class="form-group">
+                  
+                  <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Quantidade de Bagagens</small>*</p>
+                  <div class="input-group ">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
+                    <input 
+                    type="number" 
+                    class="form-control ipts" 
+                    name="placesReserve" 
+                    placeholder="Quantidade de Bagagens" 
+                    aria-label="Username" 
+                    aria-describedby="basic">
+                  </div>
                 </div><br>
-                <button type="submit" class=" btn btn-primary " id="consulta" data-bs-toggle=""data-bs-target="" data-bs-whatever="">
+                <button type="submit" class=" btn btn-primary ipts-btn" id="consulta" data-bs-toggle=""data-bs-target="" data-bs-whatever="">
                   Agendar Viagem
                 </button>
               </form>
             </nav>
 
             <div class="col-4">
-              <img src="./assets/gif/agendTravel.gif" alt="agendTravel" class="agendTravel">
+              <img src="./assets/gif/agendTravel.gif" alt="agendTravel" class="agendTravel" style="width: 100%">
             </div>
           </div>
 

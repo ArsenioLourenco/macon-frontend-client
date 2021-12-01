@@ -9,7 +9,7 @@
                 Consulte as viagens que já foram agendadas e reserve seu lugar<br>
                 ou agende as suas viajens a partir da nossa plataforma.
             </p><br>
-            <form action="" class="form">
+            <form action="./src/js/consultar.js" class="form" id="form_consultar">
                 <div class="p-2">
                     <small for="">Informe o método de Pesquisa <span style="color: red">*</span></small>
                     <br>
@@ -74,3 +74,5 @@
         </div>
 
         <?php require_once('./src/pages/footers/index.php') ?>
+
+<script src="./src/js/consultar.js"></script>

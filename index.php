@@ -1,38 +1,41 @@
 <?php require_once('./src/pages/headers/index.php') ?>
+<style>
+    .card-img-top {
+        transition: transform .2s; 
+    }
+    .card-img-top:hover{
+        transform: scale(1.1);
+    }
+</style>
+
 <head>
     <link rel="stylesheet" href="./assets/home.css">
 </head>
-<section class="section gradient-banner">
-	<div class="shapes-container">
-		<div class="shape" data-aos="fade-down-left" data-aos-duration="1500" data-aos-delay="100"></div>
-		<div class="shape" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100"></div>
-		<div class="shape" data-aos="fade-up-right" data-aos-duration="1000" data-aos-delay="200"></div>
-		<div class="shape" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"></div>
-		<div class="shape" data-aos="fade-down-left" data-aos-duration="1000" data-aos-delay="100"></div>
-		<div class="shape" data-aos="fade-down-left" data-aos-duration="1000" data-aos-delay="100"></div>
-		<div class="shape" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300"></div>
-		<div class="shape" data-aos="fade-down-right" data-aos-duration="500" data-aos-delay="200"></div>
-		<div class="shape" data-aos="fade-down-right" data-aos-duration="500" data-aos-delay="100"></div>
-		<div class="shape" data-aos="zoom-out" data-aos-duration="2000" data-aos-delay="500"></div>
-		<div class="shape" data-aos="fade-up-right" data-aos-duration="500" data-aos-delay="200"></div>
-		<div class="shape" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="100"></div>
-		<div class="shape" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0"></div>
-		<div class="shape" data-aos="fade-down" data-aos-duration="500" data-aos-delay="0"></div>
-		<div class="shape" data-aos="fade-up-right" data-aos-duration="500" data-aos-delay="100"></div>
-		<div class="shape" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="0"></div>
-	</div>
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-md-6 order-2 order-md-1 text-center text-md-left">
-				<h1 class="text-white font-weight-bold mb-4">A Carteira Digital Que Facilitará a tua Vida.</h1>
-				<p class="text-white mb-5">Baixe a Aplicação, disfrute de nossos serviços e facilite a sua vida.</p>
-				<a href="#" class="btn btn-main-md">BAIXE AGORA!</a>
-			</div>
-			<div class="col-md-6 text-center order-1 order-md-2">
-				<img class="img-fluid" src="images/mobile.png" alt="screenshot">
-			</div>
-		</div>
-	</div>
+<section class="section">
+    <div class="banner-caroucel">        
+        <div id="carouselExampleControls" class="carousel slide p-2" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/bg-macon-frota.jpg" class="d-block w-100" alt="projeto macon">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/Macon 2.jpg" class="d-block w-100" alt="projeto macon">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/bg-macon-frota.jpg" class="d-block w-100" alt="projeto macon">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+	
 </section>
 <!--====  End of Hero Section  ====-->
 
@@ -45,7 +48,7 @@
                 <div class="" id="navbarToggleExternalContent">
                     <div class="bg-ligth p-2">
                         <form action="/src/js/main" method="post" id="form_1">
-                            <h5 id="title_1">Consultar Viagem</h5>
+                            <h5 id="title_1">Pesquisar Viagem</h5>
                             <hr style="background-color: #368ED6; ">
                             <div class="teste p-2">
                                 <small>Selecione o Pais*</small>
@@ -138,6 +141,7 @@
                                             </tr>
                                         </thead>
                                         <tbody id="searchResultTbl">
+                                            <!-- Dados da Tabela -->
                                         </tbody>
                                     </table>
                                 </div>
@@ -149,7 +153,7 @@
                     </div>
                 </div>
             </div>
-
+<!-- End of Modal Content -->
             <div class="col p-3">
                 <p>
                 <div class="row">
@@ -167,38 +171,98 @@
                         ou consulte as viagens que já foram agendadas e reserve seu lugar.
                     </p>
                     <a href="agendar.php" id="agendarViagemBtn">
-                        <!-- <button type="submit" class="t-2 form-control text-center" id="searchTravel" name="searchTravel" data-bs-toggle="modal" data-bs-target="#modalPesquisa">
-                            <span id="search">
-                            </span>
-                            Agendar Viagem
-                        </button> -->
                     </a>
                 </div>
             </div>
-        </div><br><br>
-    </div><br>
-				<!-- <div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
-                    <img src="./assets/svg/travels.svg" alt="" class="img-icon" style="width: 15%;">
-					<h3 class="mt-4 text-capitalize h5 ">Quais Locais Viajamos?</h3>
-					<p class="regular text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non, recusandae
-						tempore ipsam dignissimos molestias.</p>
-				</div>
-				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
-                    <img src="./assets/svg/agend.svg" alt="" class="img-icon" style="width: 15%;">
-					<h3 class="mt-4 text-capitalize h5 ">Como Reservar seu Lugar?</h3>
-					<p class="regular text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non, recusandae
-						tempore ipsam dignissimos molestias.</p>
-				</div>
-				<div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
-                    <img src="./assets/svg/pay.svg" alt="" class="img-icon" style="width: 15%;">
-					<h3 class="mt-4 text-capitalize h5 ">Como Pagar?</h3>
-					<p class="regular text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non, recusandae
-						tempore ipsam dignissimos molestias.</p>
-					</p>
-				</div> -->
-			</div>
-		</div>
-	</div>
+</section> <br><br><br><br><br><br>
+
+
+<section class="section pt-0 position-relative pull-top t-2">
+	<div class="container">
+		<div class="rounded shadow p-5 bg-white">
+            <div class="row">
+                <div class="col colu_1">
+                    <div class="col-sm-12 text-dark text-center my-4">
+                        <h1>Destinos em Destaque</h1>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <img src="assets/img/Luanda1.jpg" class="card-img-top" alt="Cidade de Luanda">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Luanda</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <img src="assets/img/Benguela1.jpg" class="card-img-top" alt="Benguela">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Benguela</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 mb-3">
+                            <div class="card">
+                                <img src="assets/img/Whindhoek1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Windhoek</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <img src="assets/img/Whindhoek1.jpg" class="card-img-top" alt="Windhoek City">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Windhoek</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <img src="assets/img/Huambo1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Huambo</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 mb-4">
+                            <div class="card">
+                                <img src="assets/img/Lubango.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Lubango</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><br><br>
+
+
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            
+        </div>
+    </div>
 </section>
     
 
