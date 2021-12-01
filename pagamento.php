@@ -49,7 +49,7 @@
 
 
                                 <div class="my-3">
-                                    <button class="btn btn-outline-primary me-2" type="button">Pagamento por Referência</button>
+                                    <button class="btn btn-outline-primary me-2" type="button">Pagar por Referência</button>
                                     <button class="btn  me-2" type="button" id="cancelar-butoon">cancelar</button>
                                 </div>
 

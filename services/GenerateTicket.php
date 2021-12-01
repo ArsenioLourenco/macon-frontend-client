@@ -1,6 +1,5 @@
 <?php
-// Include autoloader
-// require_once 'dompdf/autoload.inc.php';
+require_once 'dompdf/autoload.inc.php';
 require_once 'ImageBase64.php';
 
 // Reference the DOM Namespace
