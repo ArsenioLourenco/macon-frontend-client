@@ -98,7 +98,7 @@
                                     <span id="search">
                                         <!-- <img src="./assets/icons/search.png" class="rounded float-start" alt="search"> -->
                                     </span>
-                                    Pesquisar
+                                    Consultar Viagem
                                 </button>
                             </div>
                         </form>
@@ -112,10 +112,9 @@
                 <div class="modal-dialog modal-fullscreen">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="modalPesquisa">Resultados da Pesquisa</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body text-center">
                             <section class="bg-light p-0">
                                 <h3 class="pb-2">Datas Disponíveis</h3>
                                 <div class="table-responsive" id="no-more-tables">
@@ -175,7 +174,7 @@
             <div class="row">
                 <div class="col colu_1">
                     <div class="col-sm-12 text-dark text-center my-4">
-                        <h1>Destinos em Destaque</h1>
+                        <h1 id="principalTitle">Destinos em Destaque</h1>
                     </div>
                     </div>
                     <div class="row">

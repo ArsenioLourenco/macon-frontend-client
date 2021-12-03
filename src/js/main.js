@@ -30,7 +30,7 @@ function createNewTravel(event) {
 
       // message.indexOf("Lamentamos") !== -1
 
-      if(!success !== -1) 
+      if(!success) 
         return exibeMensagem('Voltar', message);
 
       const [ seats, route, departureDate, price, reservationCode ] = message.split('.');
