@@ -16,7 +16,7 @@
 
     $.ajax({
       type: "GET",
-      url: `http://192.168.40.32:6800/client/travel/${reference}`,
+      url: `http://localhost:6800/client/travel/${reference}`,
       data: {},
       dataType: "json",
       success: function (response) {
@@ -29,10 +29,10 @@
         const {
           id,
           travel: {
-            originProvince:{ provinceName: originProvince},
-            destinyProvince:{ provinceName: destinyProvince},
-            transport:{ transportNumber: transportNumber},
-            spot: {spotName: spotName},
+            originProvince: { provinceName: originProvince },
+            destinyProvince: { provinceName: destinyProvince },
+            transport: { transportNumber: transportNumber },
+            spot: { spotName: spotName, province: { provinceName: provinceName } },
             departureDate,
             returnDate,
             timeToGoTo,
@@ -46,12 +46,12 @@
           status,
         } = data;
 
-        searchResultTable.html(`<tr data-id="${id}">
+        searchResultTable.html(`<tr>
                                         <td data-title="originProvinceName">${originProvince}</td>
                                         <td data-title="destinyProvinceName">${destinyProvince}</td>
                                         <td data-title="time"> Partida: ${timeToGoTo} </br> Chegada: ${timeToArrival}</td>
                                         <td data-title="dates"> Partida: ${departureDate} </br> Regresso: ${returnDate}</td>
-                                        <td data-title="spotName">${spotName}</td>
+                                        <td data-title="spotName">${spotName}, ${provinceName}</td>
                                         <td data-title="transportNumber">${transportNumber}</td>
                                         <td data-title="price">${price}</td>
                                         <td data-title="toplace">${placesReserve}</td>
@@ -59,18 +59,6 @@
                                         <td data-title="phone">${phoneNumber}</td>
                                         <td data-title="status">${status}</td>
                                         <td data-title="code">${personalCodeAgend}</td>
-                                        <td data-title="Marcar Viagem">
-                                        <a href="agendar.php?travel=${id}&origem=${originProvince}&destino=${destinyProvince}&preco=${price}" 
-                                            class="btn btn-primary btn-t-2 text-center"
-                                            id="agendarViagemBtn"
-                                            data-originProvince="${originProvince}"
-                                            data-destinyProvince="${destinyProvince}"
-                                            data-time="${timeToGoTo},${timeToArrival}"
-                                            data-date="${departureDate},${returnDate}"
-                                            data-price="${price}">
-                                            Agendar
-                                        </a>
-                                        </td>
                                     </tr>`);
       },
       error: function (response) {

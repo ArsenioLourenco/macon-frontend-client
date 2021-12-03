@@ -12,6 +12,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css">
@@ -116,6 +117,10 @@
                                         <th scope="col">Transporte</th>
                                         <th scope="col">Price</th>
                                         <th scope="col">Nº Assentos</th>
+                                        <th scope="col">Codigo de Agendamento</th>
+                                        <th scope="col">Telefone</th>
+                                        <th scope="col">Estado de reserva</th>
+                                        <th scope="col">Tipo de Transporte</th>
                                     </tr>
                                 </thead>
                                 <tbody id="searchResultTbl">
@@ -125,6 +130,11 @@
 
                     </div>
                     <div class="modal-footer">
+                        <div class="text-end">
+                            <a class="btn btn-sm btn-outline-danger" >
+                                <i class="fa fa-file-pdf-o"> Baixar PDF</i>
+                            </a>
+                        </div>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                         <button type="button" class="btn btn-primary">Confirmar</button>
                     </div>

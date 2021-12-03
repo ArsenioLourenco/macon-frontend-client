@@ -6,3 +6,4 @@ require_once 'services/GenerateTicket.php';
 $generateTicket = new GenerateTicket();
 
 $generateTicket->run();
+?>

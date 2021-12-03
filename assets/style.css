@@ -69,17 +69,10 @@ body {
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-<<<<<<< HEAD
-  font-size: 20px;
-  line-height: 23px;
-  color: #fcfcfc;
-}
-=======
   font-size: 18px;
   line-height: 21px;
   color: #fcfcfc;
 } */
->>>>>>> 64a158fae8920a548445403e61954ddcf50885d0
 
 .teste {
   padding: 8px;
@@ -179,23 +172,6 @@ small {
 
   /* Botão Marcar Style */
 
-<<<<<<< HEAD
-  #btn-marcar {
-    width: 70px;
-    height: 30px;
-    background-color: #3285c7;
-    border: none;
-    border-radius: 5px;
-    font-family: Roboto;
-    font-weight: 350;
-    font-size: 15px;
-    line-height: 23px;
-    color: #fcfcfc;
-    position: absolute;
-    margin-left: 25px;
-
-  }
-=======
   .btn-marcar {
     height: 100%;
     border: none;
@@ -268,4 +244,3 @@ label{
 .consultar_viagem button{
   width: 100%;
 }
->>>>>>> 64a158fae8920a548445403e61954ddcf50885d0
