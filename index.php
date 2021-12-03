@@ -6,6 +6,9 @@
     .card-img-top:hover{
         transform: scale(1.1);
     }
+    #botao:hover{
+      color: white !important;
+    }
 </style>
 
 <head>
@@ -193,7 +196,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Luanda</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                        <a href="#" class="btn btn-outline-primary" id="botao">Reservar</a>
                                     </div>
                             </div>
                         </div>
@@ -213,7 +216,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Windhoek</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                        <a href="#" class="btn btn-outline-primary " >Reservar</a>
                                     </div>
                             </div>
                         </div>

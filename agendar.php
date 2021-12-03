@@ -28,7 +28,7 @@
                     <input 
                       type="text" 
                       class="form-control ipts" 
-                      ame="email" 
+                      name="email" 
                       placeholder="Primeiro e Ultimo Nome" 
                       aria-label="Username" 
                       aria-describedby="basic"
@@ -61,7 +61,7 @@
                     <input 
                       type="email" 
                       class="form-control ipts" 
-                      ame="email" 
+                      name="email" 
                       placeholder="Email" 
                       aria-label="Username" 
                       aria-describedby="basic"
