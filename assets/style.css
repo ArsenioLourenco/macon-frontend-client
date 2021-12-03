@@ -63,7 +63,7 @@ body {
   width: 450px;
 }
 
-#searchTravel {
+#travelConsult, #searchTravel {
   width: 500px;
   margin-top: 20px;
   height: 64px;
@@ -293,3 +293,7 @@ label {
 .card-img-top:hover{
   transform: scale(1.1);
 }
+
+#colBtn:hover{
+  color:white !important;
+  }
