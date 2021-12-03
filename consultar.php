@@ -93,11 +93,12 @@
             </div>
         </form>
     </div>
+</div>
 
     <!-- Modal Consultar Viagem-->
     <div class="modal fade" id="modalConsultarViagem" data-bs-backdrop="static" data-bs-keyboard="false"
             tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
+            <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalConsultarViagem">Consultar Viagem
@@ -142,33 +143,7 @@
             </div>
         </div>
 
-          <!-- Footer -->
-          <footer>
-              <div class="container">
-                  <div class="row text-center py-1">
-                      <div class="col-md-4">
-                      <img src="./assets/icons/smartphone.png" alt="Contactos" id="phone_1">
-                              <p style="margin-top: 17px; margin-left: 20px;">
-                                  <span style="color: #368ED6;">Fale Connosco</span>
-                                  <br>
-                                  +244 936 789 173 - 226 21 35 04
-                              </p>
-                      </div>
-                      <div class="col-md-4">
-                          <h3 class="text-center">CONTACT INFO</h3>
-                          <p>(888) 888-8888<br>
-                              email@nuno.com</p>
-                      </div>
-                      <br>
-                      <small>Copyrigth&copy;2021 - Interdígitos, LDA - Tecnologia de informação e serviços </small>
-                  </div>
-                  <!--- End of Row -->
-              </div>
-              <!--- End of Container -->
-          </footer>
-
-        <script src="src/js/jquery-3.6.0.min.js"></script>
-        <script src="src/js/consultar.js"></script>
-</body>
+        <?php require_once('./src/pages/footers/index.php') ?>
 
 </html>
+<script src="./src/js/consultar.js"></script>
