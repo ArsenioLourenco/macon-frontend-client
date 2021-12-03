@@ -293,3 +293,7 @@ label {
 .card-img-top:hover{
   transform: scale(1.1);
 }
+
+#colBtn:hover{
+  color:white !important;
+  }

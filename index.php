@@ -5,13 +5,13 @@
 </head>
 <section class="section">
     <div class="banner-caroucel">        
-        <div id="carouselExampleControls" class="carousel slide p-2" data-bs-ride="carousel">
+        <div id="carouselExampleControls" class="carousel slide p-0" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="assets/img/bg-macon-frota.jpg" class="d-block w-100" alt="projeto macon">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/img/Macon 2.jpg" class="d-block w-100" alt="projeto macon">
+                    <img src="assets/img/bg-macon-frota.jpg" class="d-block w-100" alt="projeto macon">
                 </div>
                 <div class="carousel-item">
                     <img src="assets/img/bg-macon-frota.jpg" class="d-block w-100" alt="projeto macon">
@@ -185,7 +185,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Luanda</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                        <a href="#" id="colBtn" class="btn btn-outline-primary">Reservar</a>
                                     </div>
                             </div>
                         </div>
@@ -195,7 +195,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Benguela</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                        <a href="#" id="colBtn" class="btn btn-outline-primary">Reservar</a>
                                     </div>
                             </div>
                         </div>
@@ -205,7 +205,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Windhoek</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                        <a href="#" id="colBtn" class="btn btn-outline-primary">Reservar</a>
                                     </div>
                             </div>
                         </div>
@@ -215,7 +215,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Windhoek</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                        <a href="#" id="colBtn" class="btn btn-outline-primary">Reservar</a>
                                     </div>
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Huambo</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                        <a href="#" id="colBtn" class="btn btn-outline-primary">Reservar</a>
                                     </div>
                             </div>
                         </div>
@@ -235,7 +235,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Lubango</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-outline-primary">Reservar</a>
+                                        <a href="#" id="colBtn" class="btn btn-outline-primary">Reservar</a>
                                     </div>
                             </div>
                         </div>

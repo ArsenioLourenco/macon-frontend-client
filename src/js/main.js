@@ -24,10 +24,17 @@ function createNewTravel(event) {
     processData: false,
     success: function (response) {
 
-      const { message } = response;
+      const { message, success } = response;
       
+      // Verify seats are available
+
+      // message.indexOf("Lamentamos") !== -1
+
+      if(!success !== -1) 
+        return exibeMensagem('Voltar', message);
+
       const [ seats, route, departureDate, price, reservationCode ] = message.split('.');
-      
+
       window.open(
         `http://localhost:3000/generatepdf.php?seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}`,
         '_blank'
@@ -40,18 +47,19 @@ function createNewTravel(event) {
   });
 }
 
-function exibeMensagem() {
+function exibeMensagem(confirmButtonText = 'Voltar', text = '') {
   return Swal.fire({
-    icon: 'warning',
-    title: 'Oops...',
-    //showConfirmButton: false,
-    confirmButtonText: 'Voltar a Pesquisa',
-    text: 'Pesquisa não Encontrada',
-    didClose: () => {
-      $('#modalPesquisa').find('.btn-close').trigger('click');
-    }
-})
+      icon: 'warning',
+      title: 'Oops...',
+      //showConfirmButton: false,
+      confirmButtonText,
+      text,
+      didClose: () => {
+        $('#modalPesquisa').find('.btn-close').trigger('click');
+      }
+  })
  }
+
 
 function handleConsultTravel(event) {
   event.preventDefault();
@@ -115,7 +123,7 @@ function handleConsultTravel(event) {
     error: function (response) {
     //  To do:Retornar uma mensagem de Não Temos Essa Viagem Agendada. 
       console.log("Error: ", response);
-      exibeMensagem();
+      exibeMensagem('Voltar a Pesquisa', 'Pesquisa não Encontrada');
     },
   });
 }

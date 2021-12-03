@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="plugins/slick/slick-theme.css">
     <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
     <link rel="stylesheet" href="plugins/aos/aos.css">
+    <link rel="stylesheet" href="/assets/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 
 <style>
