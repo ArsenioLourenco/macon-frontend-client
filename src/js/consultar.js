@@ -12,88 +12,60 @@
 
     console.log("---Serialize: ", $(this).serialize());
 
-    let optionSelected = $("#valueToConsult").val();
-    let typeConsult = $("#travelConsult").val();
-    
-    if(typeConsult == 'contact'){
-      $.ajax({
-        type: "GET",
-        url: `http://192.168.40.32:6800/client/travel/${optionSelected}`,
-        data: {},
-        dataType: "json",
-        success: function (response) {
-          console.log("Success: ", response, response.data);
+    let reference = $("#contact").val();
 
-          const { data } = response;
+    $.ajax({
+      type: "GET",
+      url: `http://localhost:6800/client/travel/${reference}`,
+      data: {},
+      dataType: "json",
+      success: function (response) {
+        console.log("Success: ", response, response.data);
 
-          searchResultTable.find("tr").remove();
+        const { data } = response;
 
-          const {
-            id,
-            placesReserve,
-            personalCodeAgend,
-            userAgendCode,
-            phoneNumber,
-            status,
-          } = data;
+        searchResultTable.find("tr").remove();
 
-          searchResultTable.html(`<tr>
-                                      <td data-title="id">${id}</td>
-                                      <td data-title="toplace">${placesReserve}</td>
-                                      <td data-title="agenCode">${userAgendCode}</td>
-                                      <td data-title="phone">${phoneNumber}</td>
-                                      <td data-title="status">${status}</td>
-                                      <td data-title="code">${personalCodeAgend}</td>
-                                      <td data-title="Marcar Viagem">
-                                      <button type="reset" class="btn btn-primary"><i class="bi bi-trash"></i></button>
-                                      </td>    
-                                      </tr>`);
-        },
-        error: function (response) {
-          //  To do:Retornar uma mensagem de Não Temos Essa Viagem Agendada.
-          console.log("Error: ", response);
-        },
-      });
-    }else if( typeConsult == 'codeReserve'){
-      $.ajax({
-        type: "GET",
-        url: `http://192.168.40.32:6800/client/travel/personalCode/${optionSelected}`,
-        data: {},
-        dataType: "json",
-        success: function (response) {
-          console.log("Success: ", response, response.data);
+        const {
+          id,
+          travel: {
+            originProvince: { provinceName: originProvince },
+            destinyProvince: { provinceName: destinyProvince },
+            transport: { transportNumber: transportNumber },
+            spot: { spotName: spotName, province: { provinceName: provinceName } },
+            departureDate,
+            returnDate,
+            timeToGoTo,
+            timeToArrival,
+            price
+          },
+          placesReserve,
+          personalCodeAgend,
+          userAgendCode,
+          phoneNumber,
+          status,
+        } = data;
 
-          const { data } = response;
-
-          searchResultTable.find("tr").remove();
-
-          const {
-            id,
-            placesReserve,
-            personalCodeAgend,
-            userAgendCode,
-            phoneNumber,
-            status,
-          } = data;
-
-          searchResultTable.html(`    <tr>
-                                          <td data-title="id">${id}</td>
-                                          <td data-title="toplace">${placesReserve}</td>
-                                          <td data-title="agenCode">${userAgendCode}</td>
-                                          <td data-title="phone">${phoneNumber}</td>
-                                          <td data-title="status">${status}</td>
-                                          <td data-title="code">${personalCodeAgend}</td>
-                                          <td data-title="Marcar Viagem">
-                                          <button type="reset" class="btn btn-primary"><i class="bi bi-trash"></i></button>
-                                          </td>
-                                      </tr>`);
-        },
-        error: function (response) {
-          //  To do:Retornar uma mensagem de Não Temos Essa Viagem Agendada.
-          console.log("Error: ", response);
-        },
-      });
-    }
+        searchResultTable.html(`<tr>
+                                        <td data-title="originProvinceName">${originProvince}</td>
+                                        <td data-title="destinyProvinceName">${destinyProvince}</td>
+                                        <td data-title="time"> Partida: ${timeToGoTo} </br> Chegada: ${timeToArrival}</td>
+                                        <td data-title="dates"> Partida: ${departureDate} </br> Regresso: ${returnDate}</td>
+                                        <td data-title="spotName">${spotName}, ${provinceName}</td>
+                                        <td data-title="transportNumber">${transportNumber}</td>
+                                        <td data-title="price">${price}</td>
+                                        <td data-title="toplace">${placesReserve}</td>
+                                        <td data-title="agenCode">${userAgendCode}</td>
+                                        <td data-title="phone">${phoneNumber}</td>
+                                        <td data-title="status">${status}</td>
+                                        <td data-title="code">${personalCodeAgend}</td>
+                                    </tr>`);
+      },
+      error: function (response) {
+        //  To do:Retornar uma mensagem de Não Temos Essa Viagem Agendada.
+        console.log("Error: ", response);
+      },
+    });
   }
 })(jQuery);
 
