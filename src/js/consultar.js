@@ -16,7 +16,7 @@
 
     $.ajax({
       type: "GET",
-      url: `http://localhost:6800/client/travel/${reference}`,
+      url: `http://192.168.40.32:6800/client/travel/${reference}`,
       data: {},
       dataType: "json",
       success: function (response) {
