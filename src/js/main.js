@@ -24,10 +24,17 @@ function createNewTravel(event) {
     processData: false,
     success: function (response) {
 
-      const { message } = response;
+      const { message, success } = response;
       
+      // Verify seats are available
+
+      // message.indexOf("Lamentamos") !== -1
+
+      if(!success) 
+        return exibeMensagem('Voltar', message);
+
       const [ seats, route, departureDate, price, reservationCode ] = message.split('.');
-      
+
       window.open(
         `http://localhost:3000/generatepdf.php?seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}`,
         '_blank'
@@ -39,6 +46,20 @@ function createNewTravel(event) {
     },
   });
 }
+
+function exibeMensagem(confirmButtonText = 'Voltar', text = '') {
+  return Swal.fire({
+      icon: 'warning',
+      title: 'Oops...',
+      //showConfirmButton: false,
+      confirmButtonText,
+      text,
+      didClose: () => {
+        $('#modalPesquisa').find('.btn-close').trigger('click');
+      }
+  })
+ }
+
 
 function handleConsultTravel(event) {
   event.preventDefault();
@@ -102,6 +123,7 @@ function handleConsultTravel(event) {
     error: function (response) {
     //  To do:Retornar uma mensagem de Não Temos Essa Viagem Agendada. 
       console.log("Error: ", response);
+      exibeMensagem('Voltar a Pesquisa', 'Pesquisa não Encontrada');
     },
   });
 }
@@ -240,7 +262,7 @@ function consult() {
                                           <td data-title="phone">${phoneNumber}</td>
                                           <td data-title="status">${status}</td>
                                           <td data-title="code">${personalCodeAgend}</td>
-                                          <td data-title="Marcar Viagem">
+                                          <td data-title="Agendar Viagem">
                                           <button type="reset" class="btn btn-primary"><i class="bi bi-trash"></i></button>
                                           </td>    
                                       </tr>`);
