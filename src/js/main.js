@@ -40,6 +40,19 @@ function createNewTravel(event) {
   });
 }
 
+function exibeMensagem() {
+  return Swal.fire({
+    icon: 'warning',
+    title: 'Oops...',
+    //showConfirmButton: false,
+    confirmButtonText: 'Voltar a Pesquisa',
+    text: 'Pesquisa não Encontrada',
+    didClose: () => {
+      $('#modalPesquisa').find('.btn-close').trigger('click');
+    }
+})
+ }
+
 function handleConsultTravel(event) {
   event.preventDefault();
 
@@ -102,6 +115,7 @@ function handleConsultTravel(event) {
     error: function (response) {
     //  To do:Retornar uma mensagem de Não Temos Essa Viagem Agendada. 
       console.log("Error: ", response);
+      exibeMensagem();
     },
   });
 }
@@ -240,7 +254,7 @@ function consult() {
                                           <td data-title="phone">${phoneNumber}</td>
                                           <td data-title="status">${status}</td>
                                           <td data-title="code">${personalCodeAgend}</td>
-                                          <td data-title="Marcar Viagem">
+                                          <td data-title="Agendar Viagem">
                                           <button type="reset" class="btn btn-primary"><i class="bi bi-trash"></i></button>
                                           </td>    
                                       </tr>`);

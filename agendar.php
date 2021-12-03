@@ -9,7 +9,15 @@
                   <p class="" id="ponto" style="margin-bottom: 0;"><small>Origem</small>*</p>
                   <div class="input-group">
                     <span class="input-group-text" id="basic-addon1"></i></span>
-                    <input id="agenda-viagem-origem" type="text" class="form-control ipts" name="origem" placeholder="Origem" aria-label="Username" aria-describedby="basic">
+                    <input id="agenda-viagem-origem" 
+                    type="text" 
+                    class="form-control ipts" 
+                    name="origem" 
+                    placeholder="Origem" 
+                    aria-label="Username" 
+                    aria-describedby="basic"
+                    required
+                    >
                   </div>
                 </div>
 
@@ -17,25 +25,19 @@
                   <p class="" id="ponto" style="margin-bottom: 0;"><small>Destino</small>*</p>
                   <div class="input-group">
                     <span class="input-group-text" id="basic-addon1"></i></span>
-                    <input id="agenda-viagem-destino" type="text" class="form-control ipts" name="destino" placeholder="Destino" aria-label="Username" aria-describedby="basic">
+                    <input id="agenda-viagem-destino" 
+                    type="text" 
+                    class="form-control ipts" 
+                    name="destino" 
+                    placeholder="Destino" 
+                    aria-label="Username" 
+                    aria-describedby="basic"
+                    required
+                    >
                   </div>
                 </div>
                 <div class="form-group">
-                  
-                  <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Primeiro e Ultimo Nome</small>*</p>
-                  <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-at"></i></span>
-                    <input 
-                      type="text" 
-                      class="form-control ipts" 
-                      ame="email" 
-                      placeholder="Primeiro e Ultimo Nome" 
-                      aria-label="Username" 
-                      aria-describedby="basic"
-                      required maxlength="50">
-                  </div>
-
-
+                
                 <input id="agenda-viagem-id" type="hidden" class="form-control ipts" name="travelId" placeholder="Trajecto" aria-label="Username" aria-describedby="basic">
 
                 <div class="form-group">
@@ -49,7 +51,8 @@
                       placeholder="Telefone" 
                       aria-label="Username" 
                       aria-describedby="basic" 
-                      required maxlength="13">
+                      required maxlength="13"
+                      >
                   </div>
                 </div>
                 
@@ -61,11 +64,12 @@
                     <input 
                       type="email" 
                       class="form-control ipts" 
-                      ame="email" 
-                      placeholder="Email" 
+                      name="email" 
+                      placeholder="email" 
                       aria-label="Username" 
                       aria-describedby="basic"
-                      required maxlength="50">
+                      required maxlength="50"
+                      >
                   </div>
 
                 </div>
@@ -80,21 +84,10 @@
                     name="placesReserve" 
                     placeholder="Quantidade de lugares" 
                     aria-label="Username" 
-                    aria-describedby="basic">
+                    aria-describedby="basic"
+                    >
                   </div>
 
-                  <div class="form-group">
-                  
-                  <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Quantidade de Bagagens</small>*</p>
-                  <div class="input-group ">
-                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
-                    <input 
-                    type="number" 
-                    class="form-control ipts" 
-                    name="placesReserve" 
-                    placeholder="Quantidade de Bagagens" 
-                    aria-label="Username" 
-                    aria-describedby="basic">
                   </div>
                 </div><br>
                 <button type="submit" class=" btn btn-primary ipts-btn" id="consulta" data-bs-toggle=""data-bs-target="" data-bs-whatever="">

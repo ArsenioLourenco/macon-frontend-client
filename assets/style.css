@@ -281,3 +281,15 @@ label {
   opacity: 1rem;
 }
 
+.card-body .card-img-top {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+.card-img-top {
+  transition: transform .2s; 
+}
+.card-img-top:hover{
+  transform: scale(1.1);
+}

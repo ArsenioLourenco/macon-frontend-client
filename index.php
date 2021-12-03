@@ -1,12 +1,4 @@
 <?php require_once('./src/pages/headers/index.php') ?>
-<style>
-    .card-img-top {
-        transition: transform .2s; 
-    }
-    .card-img-top:hover{
-        transform: scale(1.1);
-    }
-</style>
 
 <head>
     <link rel="stylesheet" href="./assets/home.css">
@@ -154,6 +146,7 @@
                 </div>
             </div>
 <!-- End of Modal Content -->
+
             <div class="col p-3">
                 <p>
                 <div class="row">
@@ -166,7 +159,7 @@
                 </p>
                 <img src="./assets/svg/home.svg" alt="">
                 <div class="text-center p-3">
-                    <h2 id="principalTitle">Agendar Viagem</h2>
+                    <h2 id="principalTitle">Agende a sua Viagem</h2>
                     <p id="descTitle1">Agende as suas viajens a partir da nossa plataforma <br>
                         ou consulte as viagens que já foram agendadas e reserve seu lugar.
                     </p>
@@ -175,7 +168,6 @@
                 </div>
             </div>
 </section> <br><br><br><br><br><br>
-
 
 <section class="section pt-0 position-relative pull-top t-2">
 	<div class="container">
@@ -253,9 +245,6 @@
         </div>
     </div>
 </section><br><br>
-
-
-
 
 <section>
     <div class="container">

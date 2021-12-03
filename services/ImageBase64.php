@@ -9,3 +9,4 @@ class ImageBase64 {
         return base64_encode($fileContent);
     }
 }
+?>
