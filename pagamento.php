@@ -28,28 +28,44 @@
                                     <label for="my-input">Entidade</label>
                                     <div class="input-group ">
                                         <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-check-fill"></i></span>
-                                        <input type="text" class="form-control " placeholder="Entidade" aria-label="Username" aria-describedby="basic-addon1">
+                                        <input 
+                                        type="text" 
+                                        class="formEntity" 
+                                        placeholder="Entidade" 
+                                        aria-label="Username" 
+                                        aria-describedby="basic-addon1"
+                                        >
                                     </div><br>
                                 </div>
                                 <div class="form-group ">
                                     <label for="my-input">Referência</label>
                                     <div class="input-group ">
                                         <span class="input-group-text" id="basic-addon1"><i class="bi bi-currency-exchange"></i></span>
-                                        <input type="text" class="form-control" placeholder="Referência" aria-label="Username" aria-describedby="basic-addon1">
+                                        <input 
+                                        type="text" 
+                                        class="formReference" 
+                                        placeholder="Referência" 
+                                        aria-label="Username" 
+                                        aria-describedby="basic-addon1"
+                                        >
                                     </div><br>
                                 </div>
                                 <div class="form-group">
                                     <label for="my-input">Motante</label>
                                     <div class="input-group  ">
                                         <span class="input-group-text" id="basic-addon1"><i class="bi bi-cash-coin"></i></span>
-                                        <input type="text" class="form-control" placeholder="Motante" aria-label="Username" aria-describedby="basic-addon1">
+                                        <input 
+                                        type="text" 
+                                        class="formAmount" 
+                                        placeholder="Motante" 
+                                        aria-label="Username" 
+                                        aria-describedby="basic-addon1"
+                                        >
                                     </div>
                                 </div>
 
-
-
                                 <div class="my-3">
-                                    <button class="btn btn-outline-primary me-2" type="button">Pagar por Referência</button>
+                                    <button id="buttonPagar" class="btn btn-outline-primary me-2" type="buttonPagar">Pagar por Referência</button>
                                     <button class="btn  me-2" type="button" id="cancelar-butoon">cancelar</button>
                                 </div>
 
@@ -116,5 +132,7 @@
         </div>
     </div>
 </div> -->
+<script src="src/js/payment.js">
 
+</script>
 <?php require_once('./src/pages/footers/index.php') ?>

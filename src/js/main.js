@@ -29,11 +29,11 @@ function createNewTravel(event) {
       // Verify seats are available
 
       // message.indexOf("Lamentamos") !== -1
-
+      console.log(message, success);
       if(!success) 
         return exibeMensagem('Voltar', message);
 
-      const [ seats, route, departureDate, price, reservationCode ] = message.split('.');
+      const [ seats, route, departureDate, price, reservationCode ] = message.split('.') ?? window.alert('Failed');
 
       window.open(
         `http://localhost:3000/generatepdf.php?seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}`,
@@ -47,6 +47,7 @@ function createNewTravel(event) {
   });
 }
 
+// Validação das inputs 
 function exibeMensagem(confirmButtonText = 'Voltar', text = '') {
   return Swal.fire({
       icon: 'warning',

@@ -144,8 +144,8 @@
                     </div>
                 </div>
             </div>
-<!-- End of Modal Content -->
 
+<!-- End of Modal Content -->
             <div class="col p-3">
                 <p>
                 <div class="row">
