@@ -1,11 +1,9 @@
 <?php
-// Include autoloader
-// require_once 'dompdf/autoload.inc.php';
-require_once 'ImageBase64.php';
+require_once 'dompdf/autoload.inc.php';
+require_o nce 'ImageBase64.php';
 
 // Reference the DOM Namespace
 use Dompdf\Dompdf;
-
 class GenerateTicket {
 
     private $dompdf;
@@ -15,10 +13,8 @@ class GenerateTicket {
     {
         $this->dompdf = new Dompdf();
 
-        $this->imageBase64 = new ImageBase64();
-        
+        $this->imageBase64 = new ImageBase64();  
     }
-
     function run() {
 
         $logo = __DIR__ . '/../assets/img/macon-logo.png';

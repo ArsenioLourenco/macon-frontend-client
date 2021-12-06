@@ -1,6 +1,7 @@
 (function () {
   const consultTravelBtn = $("#travelConsult"),
     searchResultTable = $("#searchResultTbl");
+    
 
   consultTravelBtn.on("click", travelConsult);
 
