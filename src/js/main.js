@@ -3,7 +3,8 @@ const consultTravelBtn = $("#searchTravel"),
   searchResultTable = $("#searchResultTbl"),
   countryList = $("#country"),
   provinceListSource = $("#source"),
-  provinceListDestination = $("#destination");
+  provinceListDestination = $("#destination"),
+  baseURl = 'http://192.168.40.32:6800/';
 
 // Bind events 
 consultTravelBtn.on("click", handleConsultTravel);
@@ -17,7 +18,7 @@ function createNewTravel(event) {
 
   $.ajax({
     type: "POST",
-    url: "http://192.168.40.32:6800/client/travel/agend",
+    url: `${baseURl}client/travel/agend`,
     // url: "http://localhost:3000/senddata.php",
     data: $(this).serialize(),
     dataType: "JSON",
@@ -30,9 +31,7 @@ function createNewTravel(event) {
 
       // message.indexOf("Lamentamos") !== -1
       console.log(message, success);
-      if(!success) 
-        return exibeMensagem('Voltar', message);
-
+      
       const [ seats, route, departureDate, price, reservationCode ] = message.split('.') ?? window.alert('Failed');
 
       window.open(
@@ -42,7 +41,13 @@ function createNewTravel(event) {
 
     },
     error: function (response) {
-      console.log("Error: ", response);
+      const { responseJSON: {message, success} } = response;
+      // console.log("Error: ", response);
+      console.log(message, success);
+      
+      if(!success) 
+        return exibeMensagem('Voltar', message);
+
     },
   });
 }
@@ -74,7 +79,7 @@ function handleConsultTravel(event) {
 
   $.ajax({
     type: "GET",
-    url: `http://192.168.40.32:6800/travels/${source}/${destination}/${departureDate}/${returnDateExists}`,
+    url: `${baseURl}travels/${source}/${destination}/${departureDate}/${returnDateExists}`,
     data: {},
     dataType: "json",
     success: function (response) {
@@ -132,7 +137,7 @@ function handleConsultTravel(event) {
 function appendCountryList() {
   $.ajax({
       type: "GET",
-      url: "http://192.168.40.32:6800/countries/list",
+      url: `${baseURl}countries/list`,
       data: {},
       dataType: "json",
       success: function (response) {
@@ -159,7 +164,7 @@ function handleCountryListChange() {
 function appendProvinceList(country_id) {
     $.ajax({
         type: "GET",
-        url: `http://192.168.40.32:6800/provinces/list/${country_id}`,
+        url: `${baseURl}provinces/list/${country_id}`,
         data: {},
         dataType: "json",
         success: function (response) {
@@ -237,7 +242,7 @@ function consult() {
     if(typeConsult == 'contact'){
       $.ajax({
         type: "GET",
-        url: `http://192.168.40.32:6800/client/travel/${optionSelected}`,
+        url: `${baseURl}client/travel/${optionSelected}`,
         data: {},
         dataType: "json",
         success: function (response) {
@@ -276,7 +281,7 @@ function consult() {
     }else if( typeConsult == 'codeReserve'){
       $.ajax({
         type: "GET",
-        url: `http://192.168.40.32:6800/client/travel/personalCode/${optionSelected}`,
+        url: `${baseURl}client/travel/personalCode/${optionSelected}`,
         data: {},
         dataType: "json",
         success: function (response) {
