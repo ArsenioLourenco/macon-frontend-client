@@ -44,6 +44,7 @@
                         <h5 class="modal-title" id="modalConsultarViagem">Consultar Viagem
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                     </div>
                     <div class="modal-body">
                         <section>
@@ -69,10 +70,11 @@
                             </table>
                         </section>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     </div>
-                </div>
+                </div>  
             </div>
         </div>
 

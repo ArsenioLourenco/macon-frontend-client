@@ -41,7 +41,7 @@
                     <div class="bg-ligth p-2">
                         <form action="/src/js/main" method="post" id="form_1">
                             <h5 id="title_1">Pesquisar Viagem</h5>
-                            <hr style="background-color: #368ED6; ">
+                            <hr style="background-color: #368ED6;">
                             <div class="teste p-2">
                                 <small>Selecione o Pais*</small>
                                 <select 

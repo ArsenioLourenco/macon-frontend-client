@@ -1,9 +1,8 @@
-const baseURL = 'http://192.168.40.32:6800/'
-
+// const baseURL = 'http://192.168.40.32:6800/'
 (function () {
   const consultTravelBtn = $("#travelConsult"),
     searchResultTable = $("#searchResultTbl");
-    
+   const baseURL = 'http://192.168.40.32:6800/'
 
   consultTravelBtn.on("click", travelConsult);
 
@@ -19,7 +18,7 @@ const baseURL = 'http://192.168.40.32:6800/'
 
     $.ajax({
       type: "GET",
-      url: `${baseURl}client/travel/${reference}`,
+      url: `${baseURL}client/travel/${reference}`,
       data: {},
       dataType: "json",
       success: function (response) {

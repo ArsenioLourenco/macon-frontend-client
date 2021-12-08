@@ -26,7 +26,7 @@ function createNewTravel(event) {
     success: function (response) {
 
       const { message, success } = response;
-      
+    
       // Verify seats are available
 
       // message.indexOf("Lamentamos") !== -1
