@@ -62,31 +62,46 @@
 </style>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-          <img src="./assets/img/LOGO-MACON.png" alt="Logotipo Macon" id="logotype" style="height: auto; width: auto">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.php">INICIO</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="consultar.php">CONSULTAR</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="sobreNos.php">SOBRE</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contactos.php">CONTACTOS</a>
-              </li>
-            </ul>
-          </div>
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
+      <div class="container">
+        <a herf="index.php" class="navbar-brand mb-0 h1">
+          <img
+            class="d-inline-block align-top"
+            src="/assets/img/LOGO-MACON.png"
+            width="150"
+            height="50"
+            alt="logo"
+          />
+        </a>
+        <button
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          class="navbar-toggler"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="index.php" class="nav-link active">INICIO</a>
+            </li>
+            <li class="nav-item">
+              <a href="consultar.php" class="nav-link">CONSULTAR</a>
+            </li>
+            <li class="nav-item">
+              <a href="sobreNos.php" class="nav-link">SOBRE</a>
+            </li>
+            <li class="nav-item">
+              <a href="contactos.php" class="nav-link">CONTACTO</a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+
 </body>
 
