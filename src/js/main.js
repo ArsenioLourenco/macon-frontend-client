@@ -10,35 +10,67 @@ consultTravelBtn.on("click", handleConsultTravel);
 countryList.on('change', handleCountryListChange);
 
 // Agend Travel Submition
-$('#agendTravelForm').on('submit', createNewTravel);
+$('#agendTravelForm').on('submit', agendTravel);
 
-function createNewTravel(event) {
+function agendTravel(event) {
   event.preventDefault();
 
   $.ajax({
     type: "POST",
     url: "http://192.168.40.32:6800/client/travel/agend",
-    // url: "http://localhost:3000/senddata.php",
     data: $(this).serialize(),
     dataType: "JSON",
-    processData: false,
     success: function (response) {
 
       const { message, success } = response;
       
-      // Verify seats are available
-
-      // message.indexOf("Lamentamos") !== -1
+      console.log('DADOS Agendamento: ', message);
 
       if(!success) 
         return exibeMensagem('Voltar', message);
 
-      const [ seats, route, departureDate, price, reservationCode ] = message.split('.');
+        const [ seats, route, departureDate, price, reservationCode, Agendamento ] = message.split('.');
+        const [, valor] = price.split(':');
+        const [, custo] = valor.split(' ');
+        const [, ids] = Agendamento.split(':');
+        const [, agendIds] = ids.split(' ');
+
+        var text = "";
+        var possible = "abcde0123456789";
+        for (var i = 0; i < 15; i++){
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
 
       window.open(
-        `http://localhost:3000/generatepdf.php?seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}`,
-        '_blank'
-      )
+        `http://localhost:3000/pagamento.php?travel=${data.travel}&price=${custo}&reference=${text}&agendamento=${agendIds}`,
+        
+      );
+
+    },
+    error: function (response) {
+      console.log("Error: ", response);
+    },
+  });
+}
+
+$('#pagamentoForm').on('submit', travelPayment);
+
+function travelPayment(event) {
+  event.preventDefault();
+
+  $.ajax({
+    type: "POST",
+    url: "http://192.168.40.32:6800/payment/create",
+    data: $(this).serialize(),
+    dataType: "JSON",
+    success: function (response) {
+
+      const { message, success } = response;
+      
+      console.log('DADOS Pagamento: ', message);
+
+      if(!success) 
+        return exibeMensagem('Voltar', message);
 
     },
     error: function (response) {
@@ -59,7 +91,6 @@ function exibeMensagem(confirmButtonText = 'Voltar', text = '') {
       }
   })
  }
-
 
 function handleConsultTravel(event) {
   event.preventDefault();
@@ -82,7 +113,7 @@ function handleConsultTravel(event) {
       const { data } = response;
 
       searchResultTable.find('tr').remove();
-      console.log(data);
+      
       data.map(({
         id, 
         originProvince: { provinceName: originProvinceName }, 
@@ -117,7 +148,6 @@ function handleConsultTravel(event) {
               </a>
             </td>
         </tr>`);
-
       });
     },
     error: function (response) {
@@ -211,6 +241,9 @@ function getFromParamsTravelData() {
 
     if (nameParam === 'preco')
       $('#agenda-viagem-preco').val(valueParam).attr('readonly', true);
+
+      if (nameParam === 'placesReserve')
+      $('#agenda-viagem-placesReserved').val(valueParam).attr('readonly', true);
 
   }
 }
@@ -314,7 +347,6 @@ function consult() {
     }
   }
 }(jQuery);
-
 
 function verifySelectedTravel() {
   getFromParamsTravelData()

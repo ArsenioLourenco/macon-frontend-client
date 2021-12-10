@@ -43,7 +43,7 @@
                             <h5 id="title_1">Pesquisar Viagem</h5>
                             <hr style="background-color: #368ED6; ">
                             <div class="teste p-2">
-                                <small>Selecione o Pais*</small>
+                                <small>Selecione o Pais<span style="color: red">*</span></small>
                                 <select 
                                     type="select" 
                                     name="idTravel" 
@@ -53,7 +53,7 @@
                                     <option value="0" disabled selected>Selecione um Pais</option>
                                 </select>
 
-                                <small>Origem*</small>
+                                <small>Origem<span style="color: red">*</span></small>
                                 <select 
                                     type="select" 
                                     name="idTravel" 
@@ -64,7 +64,7 @@
                                     <option value="0">Selecione uma Província</option>
                                 </select>
 
-                                <small>Destino*</small>
+                                <small>Destino<span style="color: red">*</span></small>
                                 <select 
                                     type="select" 
                                     name="idTravel" 
@@ -75,7 +75,7 @@
                                     <option value="0">Selecione uma Província Destino</option>
                                 </select>
 
-                                <small>Data de Partida*</small>
+                                <small>Data de Partida<span style="color: red">*</span></small>
                                 <input 
                                     type="date" 
                                     name="departureDate" 

@@ -53,6 +53,19 @@ body {
   color: white;
 }
 
+#agendTravelBtn {
+  margin-top: 0px;
+  height: 64px;
+  background-color: #3285c7;
+  border-radius: 8px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fcfcfc;
+}
+
 .iptsAgend {
   width: 350px;
   height: 64px;
@@ -63,7 +76,7 @@ body {
   width: 450px;
 }
 
-#travelConsult, #searchTravel {
+#travelConsult, #searchTravel{
   width: 500px;
   margin-top: 20px;
   height: 64px;
