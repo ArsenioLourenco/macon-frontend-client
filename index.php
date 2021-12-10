@@ -1,5 +1,11 @@
 <?php require_once('./src/pages/headers/index.php') ?>
 
+<style>
+@media screen and (max-device-width: 500px) {
+    
+}
+</style>
+
 <head>
     <link rel="stylesheet" href="./assets/home.css">
 </head>
@@ -29,7 +35,7 @@
     </div>
 	
 </section>
-<!--====  End of Hero Section  ====-->
+<!--====  End of carousel Section  ====-->
 
 <section class="section pt-0 position-relative pull-top">
 	<div class="container">
