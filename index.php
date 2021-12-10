@@ -1,5 +1,11 @@
 <?php require_once('./src/pages/headers/index.php') ?>
 
+<style>
+@media screen and (max-device-width: 500px) {
+    
+}
+</style>
+
 <head>
     <link rel="stylesheet" href="./assets/home.css">
 </head>
@@ -29,143 +35,145 @@
     </div>
 	
 </section>
-<!--====  End of Hero Section  ====-->
+<!--====  End of carousel Section  ====-->
 
 <section class="section pt-0 position-relative pull-top">
 	<div class="container">
 		<div class="rounded shadow p-5 bg-white">
             <div class="row">
-            <div class="col colu_1">
-                <!-- As a link -->
-                <div class="" id="navbarToggleExternalContent">
-                    <div class="bg-ligth p-2">
-                        <form action="/src/js/main" method="post" id="form_1">
-                            <h5 id="title_1">Pesquisar Viagem</h5>
-                            <hr style="background-color: #368ED6; ">
-                            <div class="teste p-2">
-                                <small>Selecione o Pais<span style="color: red">*</span></small>
-                                <select 
-                                    type="select" 
-                                    name="idTravel" 
-                                    id="country" 
-                                    class="form-control ipts"
-                                >
-                                    <option value="0" disabled selected>Selecione um Pais</option>
-                                </select>
+                <div class="col colu_1">
+                    <!-- As a link -->
+                    <div class="" id="navbarToggleExternalContent">
+                        <div class="bg-ligth p-2">
+                            <form action="/src/js/main" method="post" id="form_1">
+                                <h5 id="title_1">Pesquisar Viagem</h5>
+                                <hr style="background-color: #368ED6;" />
+                                <div class="teste p-2">
+                                    <small>Selecione o Pais*</small>
+                                    <select 
+                                        type="select" 
+                                        name="idTravel" 
+                                        id="country" 
+                                        class="form-control ipts"
+                                    >
+                                        <option value="0" disabled selected>Selecione um Pais</option>
+                                    </select>
 
-                                <small>Origem<span style="color: red">*</span></small>
-                                <select 
-                                    type="select" 
-                                    name="idTravel" 
-                                    id="source" 
-                                    class="form-control ipts"
-                                    required class="form-control"
-                                >
-                                    <option value="0">Selecione uma Província</option>
-                                </select>
+                                    <small>Origem*</small>
+                                    <select 
+                                        type="select" 
+                                        name="idTravel" 
+                                        id="source" 
+                                        class="form-control ipts"
+                                        required class="form-control"
+                                    >
+                                        <option value="0">Selecione uma Província</option>
+                                    </select>
 
-                                <small>Destino<span style="color: red">*</span></small>
-                                <select 
-                                    type="select" 
-                                    name="idTravel" 
-                                    id="destination" 
-                                    class="form-control ipts"
-                                    width="450px" 
-                                >
-                                    <option value="0">Selecione uma Província Destino</option>
-                                </select>
+                                    <small>Destino*</small>
+                                    <select 
+                                        type="select" 
+                                        name="idTravel" 
+                                        id="destination" 
+                                        class="form-control ipts"
+                                        width="450px" 
+                                    >
+                                        <option value="0">Selecione uma Província Destino</option>
+                                    </select>
 
-                                <small>Data de Partida<span style="color: red">*</span></small>
-                                <input 
-                                    type="date" 
-                                    name="departureDate" 
-                                    id="departureDate" 
-                                    class="form-control ipts"
-                                    width="450px" 
-                                >
+                                    <small>Data de Partida*</small>
+                                    <input 
+                                        type="date" 
+                                        name="departureDate" 
+                                        id="departureDate" 
+                                        class="form-control ipts"
+                                    >
 
-                                <small>Data de Chegada</small>
-                                <input 
-                                    type="date" 
-                                    name="returnDate" 
-                                    id="returnDate" 
-                                    class="form-control ipts"
-                                    width="450px"
-                                >
+                                    <small>Data de Chegada</small>
+                                    <input 
+                                        type="date" 
+                                        name="returnDate" 
+                                        id="returnDate" 
+                                        class="form-control ipts"
+                                        width="450px"
+                                    >
 
-                                <button type="submit" class="t-2 form-control text-center" id="searchTravel"
-                                    name="searchTravel" data-bs-toggle="modal" data-bs-target="#modalPesquisa">
-                                    <span id="search">
-                                        <!-- <img src="./assets/icons/search.png" class="rounded float-start" alt="search"> -->
-                                    </span>
-                                    Consultar Viagem
-                                </button>
-                            </div>
-                        </form>
+                                    <button type="submit" class="t-2 form-control text-center" id="searchTravel"
+                                        name="searchTravel" data-bs-toggle="modal" data-bs-target="#modalPesquisa">
+                                        <span id="search">
+                                            <!-- <img src="./assets/icons/search.png" class="rounded float-start" alt="search"> -->
+                                        </span>
+                                        Consultar Viagem
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
 
             <!-- Modal Pesquisa -->
 
-            <div class="modal fade" id="modalPesquisa" tabindex="-1" aria-labelledby="modalPesquisa" aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body text-center">
-                            <section class="bg-light p-0">
-                                <h3 class="pb-2">Datas Disponíveis</h3>
-                                <div class="table-responsive" id="no-more-tables">
-                                    <table class="table bg-white">
-                                        <thead class="text-black">
-                                            <tr>
-                                                <th>Partida</th>
-                                                <th>Destino</th>
-                                                <th>Horário</th>
-                                                <th>Data</th>
-                                                <th>Preço</th>
-                                                <th>Nº Transporte</th>
-                                                <th>Assentos</th>
-                                                <th>Marcar Viagem</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="searchResultTbl">
-                                            <!-- Dados da Tabela -->
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </section>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                <div class="modal fade" id="modalPesquisa" tabindex="-1" aria-labelledby="modalPesquisa" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <section class="bg-light p-0">
+                                    <h3 class="pb-2">Datas Disponíveis</h3>
+                                    <div class="table-responsive" id="no-more-tables">
+                                        <table class="table bg-white">
+                                            <thead class="text-black">
+                                                <tr>
+                                                    <th>Partida</th>
+                                                    <th>Destino</th>
+                                                    <th>Horário</th>
+                                                    <th>Data</th>
+                                                    <th>Preço</th>
+                                                    <th>Nº Transporte</th>
+                                                    <th>Assentos</th>
+                                                    <th>Marcar Viagem</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="searchResultTbl">
+                                                <!-- Dados da Tabela -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
 <!-- End of Modal Content -->
+                <div class="col p-3">
+                    <p>
+                    <div class="row">
+                        <div class="col-1">
+                        </div>
+                        <div class="col-7">
 
-            <div class="col p-3">
-                <p>
-                <div class="row">
-                    <div class="col-1">
+                        </div>
                     </div>
-                    <div class="col-7">
-
-                    </div>
-                </div>
-                </p>
-                <img src="./assets/svg/home.svg" alt="">
-                <div class="text-center p-3">
-                    <h2 id="principalTitle">Agende a sua Viagem</h2>
-                    <p id="descTitle1">Agende as suas viajens a partir da nossa plataforma <br>
-                        ou consulte as viagens que já foram agendadas e reserve seu lugar.
                     </p>
-                    <a href="agendar.php" id="agendarViagemBtn">
-                    </a>
+                    <img src="./assets/svg/home.svg" alt="">
+                    <div class="text-center p-3">
+                        <h2 id="principalTitle">Agende a sua Viagem</h2>
+                        <p id="descTitle1">Agende as suas viajens a partir da nossa plataforma <br>
+                            ou consulte as viagens que já foram agendadas e reserve seu lugar.
+                        </p>
+                        <a href="agendar.php" id="agendarViagemBtn">
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
 </section> <br><br><br><br><br><br>
 
 <section class="section pt-0 position-relative pull-top t-2">

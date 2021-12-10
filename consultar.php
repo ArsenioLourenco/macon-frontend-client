@@ -1,5 +1,5 @@
 <?php require_once('./src/pages/headers/index.php') ?>
-<hr>
+<hr><hr><hr>
 <div class="container p-3" style="margin-top: 8px;">
     <div class="row">
         <div class="col-6">
@@ -44,6 +44,7 @@
                         <h5 class="modal-title" id="modalConsultarViagem">Consultar Viagem
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                     </div>
                     <div class="modal-body">
                         <section>
@@ -69,11 +70,11 @@
                             </table>
                         </section>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary">Confirmar</button>
                     </div>
-                </div>
+                </div>  
             </div>
         </div>
 

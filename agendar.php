@@ -1,6 +1,6 @@
 <?php require_once './src/pages/headers/index.php'?>
 
-        <div class="container">
+        <div class="container my-5 py-5">
           <div class="row justify-content-center mb-5">
             <nav class="navbar navbar-light col-sm-6">
               <form id="agendTravelForm" class="col-8 form-row">
@@ -156,7 +156,7 @@
                 console.log(valor);
             });
             console.log(data.travel);
-            document.getElementById("travelid").value = data.travel;
+            document.getElementById("travelId").value = data.travel;
             </script>
 
 <?php require_once './src/pages/footers/index.php'?>

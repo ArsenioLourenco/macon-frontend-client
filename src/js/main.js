@@ -45,10 +45,14 @@ function agendTravel(event) {
         `http://localhost:3000/pagamento.php?travel=${data.travel}&price=${custo}&reference=${text}&agendamento=${agendIds}`,
         
       );
-
     },
     error: function (response) {
       console.log("Error: ", response);
+      const { responseJSON: {message, success} } = response;
+        // console.log("Error: ", response);
+        console.log(message, success);
+        if(!success)
+          return exibeMensagem('Voltar', message);
     },
   });
 }
