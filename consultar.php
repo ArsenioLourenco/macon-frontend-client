@@ -1,5 +1,5 @@
 <?php require_once('./src/pages/headers/index.php') ?>
-<hr><hr><hr>
+
 <div class="container p-3" style="margin-top: 8px;">
     <div class="row">
         <div class="col-6">
