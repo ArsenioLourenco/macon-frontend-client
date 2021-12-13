@@ -3,56 +3,86 @@ const consultTravelBtn = $("#searchTravel"),
   searchResultTable = $("#searchResultTbl"),
   countryList = $("#country"),
   provinceListSource = $("#source"),
-  provinceListDestination = $("#destination"),
-  baseURl = 'http://192.168.40.32:6800/';
+  provinceListDestination = $("#destination");
 
 // Bind events 
 consultTravelBtn.on("click", handleConsultTravel);
 countryList.on('change', handleCountryListChange);
 
 // Agend Travel Submition
-$('#agendTravelForm').on('submit', createNewTravel);
+$('#agendTravelForm').on('submit', agendTravel);
 
-function createNewTravel(event) {
+function agendTravel(event) {
   event.preventDefault();
 
   $.ajax({
     type: "POST",
-    url: `${baseURl}client/travel/agend`,
-    // url: "http://localhost:3000/senddata.php",
+    url: "http://192.168.40.32:6800/client/travel/agend",
     data: $(this).serialize(),
     dataType: "JSON",
-    processData: false,
     success: function (response) {
 
       const { message, success } = response;
-    
-      // Verify seats are available
-
-      // message.indexOf("Lamentamos") !== -1
-      console.log(message, success);
       
-      const [ seats, route, departureDate, price, reservationCode ] = message.split('.') ?? window.alert('Failed');
+      console.log('DADOS Agendamento: ', message);
 
-      window.open(
-        `http://localhost:3000/generatepdf.php?seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}`,
-        '_blank'
-      )
-
-    },
-    error: function (response) {
-      const { responseJSON: {message, success} } = response;
-      // console.log("Error: ", response);
-      console.log(message, success);
-      
       if(!success) 
         return exibeMensagem('Voltar', message);
 
+        const [ seats, route, departureDate, price, reservationCode, Agendamento ] = message.split('.');
+        const [, valor] = price.split(':');
+        const [, custo] = valor.split(' ');
+        const [, ids] = Agendamento.split(':');
+        const [, agendIds] = ids.split(' ');
+
+        var text = "";
+        var possible = "abcde0123456789";
+        for (var i = 0; i < 15; i++){
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+      window.open(
+        `http://localhost:3000/pagamento.php?travel=${data.travel}&price=${custo}&reference=${text}&agendamento=${agendIds}`,
+        
+      );
+    },
+    error: function (response) {
+      console.log("Error: ", response);
+      const { responseJSON: {message, success} } = response;
+        // console.log("Error: ", response);
+        console.log(message, success);
+        if(!success)
+          return exibeMensagem('Voltar', message);
     },
   });
 }
 
-// Validação das inputs 
+$('#pagamentoForm').on('submit', travelPayment);
+
+function travelPayment(event) {
+  event.preventDefault();
+
+  $.ajax({
+    type: "POST",
+    url: "http://192.168.40.32:6800/payment/create",
+    data: $(this).serialize(),
+    dataType: "JSON",
+    success: function (response) {
+
+      const { message, success } = response;
+      
+      console.log('DADOS Pagamento: ', message);
+
+      if(!success) 
+        return exibeMensagem('Voltar', message);
+
+    },
+    error: function (response) {
+      console.log("Error: ", response);
+    },
+  });
+}
+
 function exibeMensagem(confirmButtonText = 'Voltar', text = '') {
   return Swal.fire({
       icon: 'warning',
@@ -66,7 +96,6 @@ function exibeMensagem(confirmButtonText = 'Voltar', text = '') {
   })
  }
 
-
 function handleConsultTravel(event) {
   event.preventDefault();
 
@@ -79,7 +108,7 @@ function handleConsultTravel(event) {
 
   $.ajax({
     type: "GET",
-    url: `${baseURl}travels/${source}/${destination}/${departureDate}/${returnDateExists}`,
+    url: `http://192.168.40.32:6800/travels/${source}/${destination}/${departureDate}/${returnDateExists}`,
     data: {},
     dataType: "json",
     success: function (response) {
@@ -88,7 +117,7 @@ function handleConsultTravel(event) {
       const { data } = response;
 
       searchResultTable.find('tr').remove();
-      console.log(data);
+      
       data.map(({
         id, 
         originProvince: { provinceName: originProvinceName }, 
@@ -123,7 +152,6 @@ function handleConsultTravel(event) {
               </a>
             </td>
         </tr>`);
-
       });
     },
     error: function (response) {
@@ -137,7 +165,7 @@ function handleConsultTravel(event) {
 function appendCountryList() {
   $.ajax({
       type: "GET",
-      url: `${baseURl}countries/list`,
+      url: "http://192.168.40.32:6800/countries/list",
       data: {},
       dataType: "json",
       success: function (response) {
@@ -164,7 +192,7 @@ function handleCountryListChange() {
 function appendProvinceList(country_id) {
     $.ajax({
         type: "GET",
-        url: `${baseURl}provinces/list/${country_id}`,
+        url: `http://192.168.40.32:6800/provinces/list/${country_id}`,
         data: {},
         dataType: "json",
         success: function (response) {
@@ -218,6 +246,9 @@ function getFromParamsTravelData() {
     if (nameParam === 'preco')
       $('#agenda-viagem-preco').val(valueParam).attr('readonly', true);
 
+      if (nameParam === 'placesReserve')
+      $('#agenda-viagem-placesReserved').val(valueParam).attr('readonly', true);
+
   }
 }
 
@@ -242,7 +273,7 @@ function consult() {
     if(typeConsult == 'contact'){
       $.ajax({
         type: "GET",
-        url: `${baseURl}client/travel/${optionSelected}`,
+        url: `http://192.168.40.32:6800/client/travel/${optionSelected}`,
         data: {},
         dataType: "json",
         success: function (response) {
@@ -281,7 +312,7 @@ function consult() {
     }else if( typeConsult == 'codeReserve'){
       $.ajax({
         type: "GET",
-        url: `${baseURl}client/travel/personalCode/${optionSelected}`,
+        url: `http://192.168.40.32:6800/client/travel/personalCode/${optionSelected}`,
         data: {},
         dataType: "json",
         success: function (response) {
@@ -320,7 +351,6 @@ function consult() {
     }
   }
 }(jQuery);
-
 
 function verifySelectedTravel() {
   getFromParamsTravelData()

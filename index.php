@@ -87,7 +87,6 @@
                                         name="departureDate" 
                                         id="departureDate" 
                                         class="form-control ipts"
-                                        width="450px" 
                                     >
 
                                     <small>Data de Chegada</small>
