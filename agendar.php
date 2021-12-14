@@ -132,7 +132,7 @@
 
                   </div>
                 </div><br>
-                <button type="submit" class=" t-2 form-control text-center" id="agendTravelBtn" data-bs-toggle=""data-bs-target="" data-bs-whatever="">
+                <button type="submit" class=" t-2 form-control text-center" id="agendTravelBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   Agendar Viagem
                 </button>
               </form>
@@ -141,18 +141,28 @@
             <!-- Modal Agendar Viagem -->
 
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
+              <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body">
-                    ...
+                  <div class="modal-body text-center">
+                  <section>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    Pagar Agendamento/Deseja Guardar o Agendamento?
+                                    </tr>
+                                </thead>
+                                <tbody id="searchResultTbl">
+                                </tbody>
+                            </table>
+                        </section>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary">Pagar</button>
+                    <button type="button" class="btn btn-primary">Guardar Agendamento</button>
                   </div>
                 </div>
               </div>

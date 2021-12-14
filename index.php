@@ -103,7 +103,7 @@
                                         <span id="search">
                                             <!-- <img src="./assets/icons/search.png" class="rounded float-start" alt="search"> -->
                                         </span>
-                                        Consultar Viagem
+                                        Pesquisar Viagem
                                     </button>
                                 </div>
                             </form>

@@ -57,6 +57,7 @@ function agendTravel(event) {
   });
 }
 
+// Pagemnto Function
 $('#pagamentoForm').on('submit', travelPayment);
 
 function travelPayment(event) {
@@ -96,6 +97,7 @@ function exibeMensagem(confirmButtonText = 'Voltar', text = '') {
   })
  }
 
+//  ConsultTravel Function
 function handleConsultTravel(event) {
   event.preventDefault();
 
@@ -251,7 +253,6 @@ function getFromParamsTravelData() {
 
   }
 }
-
 
 function consult() {
   const consultTravelBtn = $("#travelConsult"),
