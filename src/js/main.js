@@ -4,13 +4,14 @@ const consultTravelBtn = $("#searchTravel"),
   countryList = $("#country"),
   provinceListSource = $("#source"),
   provinceListDestination = $("#destination");
+  baseURL = 'http://192.168.40.32:6800/'
 
 // Bind events 
 consultTravelBtn.on("click", handleConsultTravel);
 countryList.on('change', handleCountryListChange);
 
 // Agend Travel Submition
-$('#agendTravelForm').on('submit', agendTravel);
+// $('#agendTravelForm').on('submit', agendTravel);
 
 function agendTravel(event) {
   event.preventDefault();
@@ -26,25 +27,16 @@ function agendTravel(event) {
       
       console.log('DADOS Agendamento: ', message);
 
-      if(!success) 
-        return exibeMensagem('Voltar', message);
+     console.log(message, success);
 
-        const [ seats, route, departureDate, price, reservationCode, Agendamento ] = message.split('.');
-        const [, valor] = price.split(':');
-        const [, custo] = valor.split(' ');
-        const [, ids] = Agendamento.split(':');
-        const [, agendIds] = ids.split(' ');
-
-        var text = "";
-        var possible = "abcde0123456789";
-        for (var i = 0; i < 15; i++){
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-
-      window.open(
-        `http://localhost:3000/pagamento.php?travel=${data.travel}&price=${custo}&reference=${text}&agendamento=${agendIds}`,
+     const [ seats, route, departureDate, price, reservationCode ] = message.split('.') ?? window.alert('Failed');
         
-      );
+      window.open(
+        `http://localhost:3000/generatepdf.php?seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}`,
+        '_blank'
+
+      )
+
     },
     error: function (response) {
       console.log("Error: ", response);
