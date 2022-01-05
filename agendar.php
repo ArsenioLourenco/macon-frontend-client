@@ -132,7 +132,7 @@
 
                   </div>
                 </div><br>
-                <button type="submit" class="btn btn-primary" id="consulta" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="submit" class="btn btn-primary" id="consulta">
                   Agendar Viagem
                 </button>
               </form>

@@ -1,16 +1,5 @@
 {
-    "name": "rosa.chicato/macon-front-end-client",
-    "description": "bla blaaa",
-    "autoload": {
-        "psr-4": {
-            "RosaChicato\\MaconFrontEndClient\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Rosa Chicato",
-            "email": "rosacristinachicafo@gmail.com"
-        }
-    ],
-    "require": {}
+    "require": {
+        "dompdf/dompdf": "^1.1"
+    }
 }

@@ -27,6 +27,7 @@ class GenerateTicket {
         $departureDate = isset($_GET['departureDate']) ? $_GET['departureDate'] : '-------';
         $reservationCode = isset($_GET['reservationCode']) ? $_GET['reservationCode'] : '-------';
         $price = isset($_GET['price']) ? $_GET['price'] : '0Kzs';
+        $date = isset($_GET['date']) ? $_GET['date'] : '---------';
 
         $htmlData = <<<HTML
             <div style="text-align:center;">
@@ -37,31 +38,34 @@ class GenerateTicket {
                 color: #172b4d; 
                 font-size: 25; 
                 font-family: Arial, Helvetica, sans-serif;
-                padding-top: 30px;
+                padding-top: 10px;
                 ">
                 TICKET PARA VIAGEM
             </h1>
 
             <div>
                 <div style="padding-bottom: 10px; font-size: 20px;">
-                    <strong>{$seats} </strong>
+                    <strong>Reserva: </strong>{$seats}
                 </div>
 
                 <div style="padding-bottom: 10px; font-size: 20px;">
-                    <strong>{$route}</strong> 
+                    <strong>Tragecto: </strong> {$route}
                 </div>
 
                 <div style="padding-bottom: 10px; font-size: 20px;">
-                    <strong>{$departureDate}</strong> . 
+                    <strong>Data: </strong> {$departureDate} 
                 </div>
 
                 <div style="padding-bottom: 10px; font-size: 20px;">
-                    <strong>{$price}</strong> 
+                    <strong>Montante: </strong> {$price}
                 </div>
 
                 <div style="padding-bottom: 10px; font-size: 20px;">
-                    <strong>{$reservationCode}</strong> 
+                    <strong>Codigo de Reserva: </strong> {$reservationCode}
                 </div>
+            </div>
+            <div  style="padding-bottom: 1px; font-size: 10px; margin-left: 500px">
+                {$date}
             </div>
         HTML;
 

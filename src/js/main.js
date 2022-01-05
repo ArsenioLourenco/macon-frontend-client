@@ -1,17 +1,21 @@
 // Selecionar a consulta com Id 
-const consultTravelBtn = $("#searchTravel"),
+const consultTravelBtn = $("#searchTravel"), 
+  agendTravelPaymentBtn = $("#"), 
+  agendTravelOnlyBtn = $("#")
   searchResultTable = $("#searchResultTbl"),
   countryList = $("#country"),
   provinceListSource = $("#source"),
   provinceListDestination = $("#destination");
-  baseURL = 'http://192.168.40.32:6800/'
+baseURL = 'http://192.168.40.32:6800/'
 
 // Bind events 
 consultTravelBtn.on("click", handleConsultTravel);
+agendTravelPaymentBtn.on("click", agendTravelPayment);
+agendTravelOnlyBtn.on("click", agendTravel);
 countryList.on('change', handleCountryListChange);
 
 // Agend Travel Submition
-// $('#agendTravelForm').on('submit', agendTravel);
+$('#agendTravelForm').on('submit', agendTravel);
 
 function agendTravel(event) {
   event.preventDefault();
@@ -24,15 +28,20 @@ function agendTravel(event) {
     success: function (response) {
 
       const { message, success } = response;
-      
+
       console.log('DADOS Agendamento: ', message);
 
-     console.log(message, success);
+      console.log(message, success);
 
-     const [ seats, route, departureDate, price, reservationCode ] = message.split('.') ?? window.alert('Failed');
-        
+      const [seats, route, departureDate, price, reservationCode] = message.split('.') ?? window.alert('Failed');
+
+      var d = new Date();
+      var strDate = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
+
+      console.log('Date: ',strDate);
+
       window.open(
-        `http://localhost:3000/generatepdf.php?seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}`,
+        `http://localhost:3000/generatepdf.php?seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}&date=${strDate}`,
         '_blank'
 
       )
@@ -40,14 +49,70 @@ function agendTravel(event) {
     },
     error: function (response) {
       console.log("Error: ", response);
-      const { responseJSON: {message, success} } = response;
-        // console.log("Error: ", response);
-        console.log(message, success);
-        if(!success)
-          return exibeMensagem('Voltar', message);
+      const { responseJSON: { message, success } } = response;
+      // console.log("Error: ", response);
+      console.log(message, success);
+      if (!success)
+        return exibeMensagem('Voltar', message);
     },
   });
 }
+
+
+// Agend Travel Submition
+$('#agendTravelForm').on('submit', agendTravel);
+
+function agendTravelPayment(event) {
+  event.preventDefault();
+
+  $.ajax({
+    type: "POST",
+    url: "http://192.168.40.32:6800/client/travel/agend",
+    data: $(this).serialize(),
+    dataType: "JSON",
+    success: function (response) {
+
+      const { message, success } = response;
+
+      console.log('DADOS Agendamento: ', message);
+
+      console.log(message, success);
+
+      const [seats, route, departureDate, price, reservationCode] = message.split('.') ?? window.alert('Failed');
+
+      const [, valor] = price.split(':');
+        const [, custo] = valor.split(' ');
+        const [, ids] = Agendamento.split(':');
+        const [, agendIds] = ids.split(' ');
+
+        var text = "";
+        var possible = "abcde0123456789";
+        for (var i = 0; i < 15; i++){
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+      var d = new Date();
+      var strDate = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
+
+      console.log('Date: ',strDate);
+
+      window.open(
+        `http://localhost:3000/pagamento.php?travel=${data.travel}&price=${custo}&reference=${text}&agendamento=${agendIds}&seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}`,
+        
+      );
+
+    },
+    error: function (response) {
+      console.log("Error: ", response);
+      const { responseJSON: { message, success } } = response;
+      // console.log("Error: ", response);
+      console.log(message, success);
+      if (!success)
+        return exibeMensagem('Voltar', message);
+    },
+  });
+
+
 
 // Pagemnto Function
 $('#pagamentoForm').on('submit', travelPayment);
@@ -63,10 +128,10 @@ function travelPayment(event) {
     success: function (response) {
 
       const { message, success } = response;
-      
+
       console.log('DADOS Pagamento: ', message);
 
-      if(!success) 
+      if (!success)
         return exibeMensagem('Voltar', message);
 
     },
@@ -78,25 +143,25 @@ function travelPayment(event) {
 
 function exibeMensagem(confirmButtonText = 'Voltar', text = '') {
   return Swal.fire({
-      icon: 'warning',
-      title: 'Oops...',
-      //showConfirmButton: false,
-      confirmButtonText,
-      text,
-      didClose: () => {
-        $('#modalPesquisa').find('.btn-close').trigger('click');
-      }
+    icon: 'warning',
+    title: 'Oops...',
+    //showConfirmButton: false,
+    confirmButtonText,
+    text,
+    didClose: () => {
+      $('#modalPesquisa').find('.btn-close').trigger('click');
+    }
   })
- }
+}
 
 //  ConsultTravel Function
 function handleConsultTravel(event) {
   event.preventDefault();
 
   let source = $("#source option:selected").val(),
-      destination = $("#destination option:selected").val(),
-      departureDate = $("#departureDate").val(),
-      returnDate = $("#returnDate").val();
+    destination = $("#destination option:selected").val(),
+    departureDate = $("#departureDate").val(),
+    returnDate = $("#returnDate").val();
 
   let returnDateExists = returnDate != null ? returnDate : '';
 
@@ -111,20 +176,20 @@ function handleConsultTravel(event) {
       const { data } = response;
 
       searchResultTable.find('tr').remove();
-      
+
       data.map(({
-        id, 
-        originProvince: { provinceName: originProvinceName }, 
+        id,
+        originProvince: { provinceName: originProvinceName },
         destinyProvince: { provinceName: destinyProvinceName },
-        transport: { transportNumber: transNumber, totalPlace},
+        transport: { transportNumber: transNumber, totalPlace },
         price,
         timeToArrival,
         timeToGoTo,
         departureDate,
         returnDate,
       }) => {
-        
-      searchResultTable.append(`<tr data-id="${id}">
+
+        searchResultTable.append(`<tr data-id="${id}">
             <td data-title="originProvinceName">${originProvinceName}</td>
             <td data-title="destinyProvinceName">${destinyProvinceName}</td>
             <td data-title="time"> Partida: ${timeToGoTo} | Chegada: ${timeToArrival}</td>
@@ -149,7 +214,7 @@ function handleConsultTravel(event) {
       });
     },
     error: function (response) {
-    //  To do:Retornar uma mensagem de Não Temos Essa Viagem Agendada. 
+      //  To do:Retornar uma mensagem de Não Temos Essa Viagem Agendada. 
       console.log("Error: ", response);
       exibeMensagem('Voltar a Pesquisa', 'Pesquisa não Encontrada');
     },
@@ -158,23 +223,23 @@ function handleConsultTravel(event) {
 
 function appendCountryList() {
   $.ajax({
-      type: "GET",
-      url: "http://192.168.40.32:6800/countries/list",
-      data: {},
-      dataType: "json",
-      success: function (response) {
+    type: "GET",
+    url: "http://192.168.40.32:6800/countries/list",
+    data: {},
+    dataType: "json",
+    success: function (response) {
       //   console.log("Success: ", response);
-        const { data } = response;
+      const { data } = response;
 
-        data.map(({id, countryName }) => {
-              // Add Countries to select box
-              countryList.append(`<option value="${id}">${countryName}</option>`);
-        });
-      },
-      error: function (response) {
-        console.log("Error: ", response);
-      },
-    });
+      data.map(({ id, countryName }) => {
+        // Add Countries to select box
+        countryList.append(`<option value="${id}">${countryName}</option>`);
+      });
+    },
+    error: function (response) {
+      console.log("Error: ", response);
+    },
+  });
 }
 
 function handleCountryListChange() {
@@ -184,37 +249,37 @@ function handleCountryListChange() {
 }
 
 function appendProvinceList(country_id) {
-    $.ajax({
-        type: "GET",
-        url: `http://192.168.40.32:6800/provinces/list/${country_id}`,
-        data: {},
-        dataType: "json",
-        success: function (response) {
-          // console.log("Success: ", response);
-          const { data } = response;
+  $.ajax({
+    type: "GET",
+    url: `http://192.168.40.32:6800/provinces/list/${country_id}`,
+    data: {},
+    dataType: "json",
+    success: function (response) {
+      // console.log("Success: ", response);
+      const { data } = response;
 
-          // Remove any options before adding new ones
-          provinceListSource.children('option').remove();
-          provinceListDestination.children('option').remove();
+      // Remove any options before adding new ones
+      provinceListSource.children('option').remove();
+      provinceListDestination.children('option').remove();
 
-          if(data.length !== 0) {
-            provinceListSource.html(`<option value="0" disabled selected>Selecione uma Província</option>`);
-            provinceListDestination.html(`<option value="0" disabled selected>Selecione uma Província</option>`);
-          } else {
-            provinceListSource.html(`<option value="0" disabled selected>Nenhuma Província cadastrada</option>`);
-            provinceListDestination.html(`<option value="0" disabled selected>Nenhuma Província cadastrada</option>`);
-          }
+      if (data.length !== 0) {
+        provinceListSource.html(`<option value="0" disabled selected>Selecione uma Província</option>`);
+        provinceListDestination.html(`<option value="0" disabled selected>Selecione uma Província</option>`);
+      } else {
+        provinceListSource.html(`<option value="0" disabled selected>Nenhuma Província cadastrada</option>`);
+        provinceListDestination.html(`<option value="0" disabled selected>Nenhuma Província cadastrada</option>`);
+      }
 
-          data.map(({id, provinceName }) => {
-                // Add provinces to select box
-                provinceListSource.append(`<option value="${id}">${provinceName}</option>`);
-                provinceListDestination.append(`<option value="${id}">${provinceName}</option>`);
-          });
-        },
-        error: function (response) {
-          console.log("Error: ", response);
-        },
+      data.map(({ id, provinceName }) => {
+        // Add provinces to select box
+        provinceListSource.append(`<option value="${id}">${provinceName}</option>`);
+        provinceListDestination.append(`<option value="${id}">${provinceName}</option>`);
       });
+    },
+    error: function (response) {
+      console.log("Error: ", response);
+    },
+  });
 }
 
 function getFromParamsTravelData() {
@@ -240,7 +305,7 @@ function getFromParamsTravelData() {
     if (nameParam === 'preco')
       $('#agenda-viagem-preco').val(valueParam).attr('readonly', true);
 
-      if (nameParam === 'placesReserve')
+    if (nameParam === 'placesReserve')
       $('#agenda-viagem-placesReserved').val(valueParam).attr('readonly', true);
 
   }
@@ -262,8 +327,8 @@ function consult() {
 
     let optionSelected = $("#valueToConsult").val();
     let typeConsult = $("#travelConsult").val();
-    
-    if(typeConsult == 'contact'){
+
+    if (typeConsult == 'contact') {
       $.ajax({
         type: "GET",
         url: `http://192.168.40.32:6800/client/travel/${optionSelected}`,
@@ -302,7 +367,7 @@ function consult() {
           console.log("Error: ", response);
         },
       });
-    }else if( typeConsult == 'codeReserve'){
+    } else if (typeConsult == 'codeReserve') {
       $.ajax({
         type: "GET",
         url: `http://192.168.40.32:6800/client/travel/personalCode/${optionSelected}`,
@@ -343,7 +408,7 @@ function consult() {
       });
     }
   }
-}(jQuery);
+} (jQuery);
 
 function verifySelectedTravel() {
   getFromParamsTravelData()
