@@ -3,15 +3,16 @@ const consultTravelBtn = $("#searchTravel"),
   searchResultTable = $("#searchResultTbl"),
   countryList = $("#country"),
   provinceListSource = $("#source"),
-  provinceListDestination = $("#destination");
-  baseURL = 'http://192.168.40.32:6800/'
+  provinceListDestination = $("#destination"),
+  agendTravelForm = $('#agendTravelForm'),
+  baseURL = 'http://192.168.40.32:6800/';
 
 // Bind events 
 consultTravelBtn.on("click", handleConsultTravel);
 countryList.on('change', handleCountryListChange);
 
 // Agend Travel Submition 
-$('#agendTravelForm').on('submit', agendTravel);
+agendTravelForm.on('submit', agendTravel);
 
 function agendTravel(event) {
   event.preventDefault();
@@ -36,14 +37,16 @@ function agendTravel(event) {
 
   consultingModal.show();
 }
-
-  $('#guardar').on('submit', agendTravel);
+//Função para guardar dados
+  $('#guardar').on('click', guardarTravel);
+  
 function guardarTravel(event){
   event.preventDefault();
+
   $.ajax({
     type: "POST",
     url: "http://192.168.40.32:6800/client/travel/agend",
-    data: $(this).serialize(),
+    data: $(agendTravelForm).serialize(),
     dataType: "JSON",
     success: function (response) {
 
