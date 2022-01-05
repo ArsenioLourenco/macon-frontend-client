@@ -10,12 +10,36 @@ const consultTravelBtn = $("#searchTravel"),
 consultTravelBtn.on("click", handleConsultTravel);
 countryList.on('change', handleCountryListChange);
 
-// Agend Travel Submition
-// $('#agendTravelForm').on('submit', agendTravel);
+// Agend Travel Submition 
+$('#agendTravelForm').on('submit', agendTravel);
 
 function agendTravel(event) {
   event.preventDefault();
 
+  var consultingModal = new bootstrap.Modal(document.querySelector('#consultingModal'));
+  const consultingModalDataTable = $('#consultingModalDataTable');
+  const cModalThead = consultingModalDataTable.find('thead tr');
+  const cModalTbody = consultingModalDataTable.find('tbody tr');
+
+  // Limpar informações no cabeçalho e no corpo da tabela
+  cModalThead.html('');
+  cModalTbody.html('');
+
+  // Listar informações do Formulario de Agendamento de Viagens excluindo campos ocultos
+  $(this).find('input:not([type="hidden"])').each(function(index, inputElement) {
+    const tableColumnName = $(inputElement).attr('data-table-column-name');
+    const inputValue = $(inputElement).val();
+
+    cModalThead.append(`<th>${tableColumnName}</th>`);
+    cModalTbody.append(`<td>${inputValue}</td>`);
+  });
+
+  consultingModal.show();
+}
+
+  $('#guardar').on('submit', agendTravel);
+function guardarTravel(event){
+  event.preventDefault();
   $.ajax({
     type: "POST",
     url: "http://192.168.40.32:6800/client/travel/agend",
@@ -24,7 +48,6 @@ function agendTravel(event) {
     success: function (response) {
 
       const { message, success } = response;
-      
       console.log('DADOS Agendamento: ', message);
 
      console.log(message, success);
@@ -353,6 +376,7 @@ function verifySelectedTravel() {
 appendCountryList();
 verifySelectedTravel();
 consult();
+guardarTravel();
 
 
 
