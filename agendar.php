@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="form-group">
-                  <p class="" id="ponto" style="margin-bottom: 0;"><small>Destino</small>*</p>
+                  <p class="" id="ponto" style="margin-bottom: 0; margin-top: 5px"><small>Destino</small>*</p>
                   <div class="input-group">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-geo-alt"></i></span>
                     <input id="agenda-viagem-destino"
@@ -40,7 +40,7 @@
                 <div class="form-group">
 
                 <div class="form-group">
-                  <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Nome</small>*</p>
+                  <p id="ponto" style="margin-bottom: 0; margin-top: 5px;"><small>Nome</small>*</p>
                   <div class="input-group">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i></span>
                     <input
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="form-group">
-                  <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Telefone</small>*</p>
+                  <p id="ponto" style="margin-bottom: 0; margin-top: 5px;"><small>Telefone</small>*</p>
                   <div class="input-group">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-phone"></i></span>
                     <input
@@ -73,7 +73,7 @@
 
                 <div class="form-group">
 
-                  <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Email</small></p>
+                  <p id="ponto" style="margin-bottom: 0; margin-top: 5px;"><small>Email</small></p>
                   <div class="input-group ">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope"></i></span>
                     <input
@@ -91,10 +91,10 @@
                 <div class="form-group">
 
                     <div class="input-group ">
-                    <p id="ponto" style="margin-bottom: 0; margin-top: 20px;"><small>Reserva</small>*</p>
-                    <p id="ponto" style="margin-bottom: 0; margin-top: 20px; margin-left: 150px"><small>Bagagem</small>*</p>
+                    <p id="ponto" style="margin-bottom: 0; margin-top: 5px;"><small>Reserva</small>*</p>
+                    <p id="ponto" style="margin-bottom: 0; margin-top: 5px; margin-left: 150px"><small>Bagagem</small>*</p>
                     </div>
-                  
+
                   <div class="input-group ">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-people"></i></span>
                       <input
@@ -106,7 +106,7 @@
                       aria-label="Username"
                       aria-describedby="basic"
                         required maxlength="50">
-                  
+
                       <span class="input-group-text" id="basic-addon1"><i class="bi bi-briefcase"></i></span>
                         <input
                         type="number"
@@ -132,9 +132,14 @@
 
                   </div>
                 </div><br>
-                <button type="submit" class="btn btn-primary" id="consulta">
+                <div>
+                <button type="submit" class="btn btn-primary" id="agendar" name="agendar">
                   Agendar Viagem
                 </button>
+                <button type="button" class="btn btn-primary" id="pagar" name="pagar" style="margin-left: 70px;">
+                  Comprar Bilhete
+                </button>
+                </div>
               </form>
             </nav>
 

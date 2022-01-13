@@ -1,7 +1,5 @@
 // Selecionar a consulta com Id 
 const consultTravelBtn = $("#searchTravel"), 
-  agendTravelPaymentBtn = $("#"), 
-  agendTravelOnlyBtn = $("#")
   searchResultTable = $("#searchResultTbl"),
   countryList = $("#country"),
   provinceListSource = $("#source"),
@@ -10,8 +8,6 @@ baseURL = 'http://192.168.40.32:6800/'
 
 // Bind events 
 consultTravelBtn.on("click", handleConsultTravel);
-agendTravelPaymentBtn.on("click", agendTravelPayment);
-agendTravelOnlyBtn.on("click", agendTravel);
 countryList.on('change', handleCountryListChange);
 
 // Agend Travel Submition
@@ -36,7 +32,7 @@ function agendTravel(event) {
       const [seats, route, departureDate, price, reservationCode] = message.split('.') ?? window.alert('Failed');
 
       var d = new Date();
-      var strDate = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
+      var strDate = d.getDate() + "/" + + (d.getMonth() + 1) + "/" + d.getFullYear() ;
 
       console.log('Date: ',strDate);
 
@@ -58,9 +54,7 @@ function agendTravel(event) {
   });
 }
 
-
-// Agend Travel Submition
-$('#agendTravelForm').on('submit', agendTravel);
+$('#pagar').on('click', agendTravelPayment);
 
 function agendTravelPayment(event) {
   event.preventDefault();
@@ -111,6 +105,7 @@ function agendTravelPayment(event) {
         return exibeMensagem('Voltar', message);
     },
   });
+}
 
 
 
@@ -418,11 +413,5 @@ function verifySelectedTravel() {
 appendCountryList();
 verifySelectedTravel();
 consult();
-
-
-
-
-
-
 
 
