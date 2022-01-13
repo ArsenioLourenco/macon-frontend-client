@@ -60,7 +60,6 @@ function guardarTravel(event){
       window.open(
         `http://localhost:3000/generatepdf.php?seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}`,
         '_blank'
-
       )
 
     },
@@ -175,7 +174,6 @@ function handleConsultTravel(event) {
       });
     },
     error: function (response) {
-    //  To do:Retornar uma mensagem de Não Temos Essa Viagem Agendada. 
       console.log("Error: ", response);
       exibeMensagem('Voltar a Pesquisa', 'Pesquisa não Encontrada');
     },
