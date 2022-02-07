@@ -3,9 +3,7 @@
         <div class="container my-5 py-5">
           <div class="row justify-content-center mb-5">
             <nav class="navbar navbar-light col-sm-6">
-              <form id="agendTravelForm" class="col-8 form-row">
-
-
+              <form id="agendTravelForm" class="col-8 form-row" method="post">
                 <div class="form-group">
                   <p class="" id="ponto" style="margin-bottom: 0;"><small>Origem</small>*</p>
                   <div class="input-group">
@@ -14,14 +12,13 @@
                     type="text"
                     class="form-control ipts"
                     name="origem"
+                    data-table-column-name="Origem"
                     placeholder="Origem"
                     aria-label="Username"
                     aria-describedby="basic"
-                    required
-                    >
+                    required>
                   </div>
                 </div>
-
                 <div class="form-group">
                   <p class="" id="ponto" style="margin-bottom: 0; margin-top: 5px"><small>Destino</small>*</p>
                   <div class="input-group">
@@ -30,6 +27,7 @@
                     type="text"
                     class="form-control ipts"
                     name="destino"
+                    data-table-column-name="Destino"
                     placeholder="Destino"
                     aria-label="Username"
                     aria-describedby="basic"
@@ -47,6 +45,7 @@
                       type="text"
                       class="form-control ipts"
                       name="clientName"
+                      data-table-column-name="Nome Completo"
                       placeholder="Nome"
                       aria-label="Username"
                       aria-describedby="basic"
@@ -63,6 +62,7 @@
                       type="number"
                       class="form-control ipts"
                       name="phoneNumber"
+                      data-table-column-name="Telefone"
                       placeholder="Telefone"
                       aria-label="Username"
                       aria-describedby="basic"
@@ -80,6 +80,7 @@
                       type="email"
                       class="form-control ipts"
                       name="email"
+                      data-table-column-name="E-mail"
                       placeholder="email"
                       aria-label="Username"
                       aria-describedby="basic"
@@ -102,7 +103,8 @@
                       type="number"
                       class="form-control ipts"
                       name="placesReserve"
-                      placeholder="Quantidade de lugares"
+                      data-table-column-name="Lugares Reservados"
+                      placeholder="Nº de lugares"
                       aria-label="Username"
                       aria-describedby="basic"
                         required maxlength="50">
@@ -112,7 +114,8 @@
                         type="number"
                         class="form-control ipts"
                         name="baggageNumber"
-                        placeholder="Nº bagagem"
+                        data-table-column-name="Bagagens"
+                        placeholder="Nº bagagens"
                         aria-label="Username"
                         aria-describedby="basic"
                           required maxlength="2">
@@ -132,19 +135,16 @@
 
                   </div>
                 </div><br>
-                <div>
-                <button type="submit" class="btn btn-primary" id="agendar" name="agendar">
+
+                <button type="submit" class="btn btn-primary" id="agendTravel" name="agendtravel" data-bs-target="#exampleModal">
                   Agendar Viagem
-                </button>
-                <button type="button" class="btn btn-primary" id="pagar" name="pagar" style="margin-left: 70px;">
-                  Comprar Bilhete
                 </button>
                 </div>
               </form>
             </nav>
 
             <!-- Modal Agendar Viagem -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="consultingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -152,7 +152,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body text-center">
-                  <table class="table bg-white">
+                  <table id="consultingModalDataTable" class="table bg-white">
                     <thead class="text-black">
                       <tr>
                         <th>Nome Completo</th>
@@ -163,30 +163,41 @@
                         <th>Horario</th>
                       </tr>
                     </thead>
+                    <tbody id="agendTable">
+                      <tr>
+                        <td>Tentar</td>
+                        <td>Tentar</td>
+                        <td>Tentar</td>
+                        <td>Tentar</td>
+                        <td>Tentar</td>
+                        <td>Tentar</td>
+                      </tr>
+                    </tbody>
                   </table>
 
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Pagar</button>
-                    <button type="button" class="btn btn-secondary">Guardar</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="pagar" name="pagar">Pagar</button>
+                    <button type="button" class="btn btn-primary" id="guardar" name="guardar">Guardar</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    <a href="index.php" style="text-decoration:none; color:white !important;">Cancelar</a>
+                  </button>
                   </div>
                 </div>
               </div>
             </div>
 
-
             <div class="col-4">
-              <img src="./assets/gif/agendTravel.gif" alt="agendTravel" class="agendTravel" style="width: 100%">
+              <img src="./assets/svg/home.svg" alt="agendTravel" class="agendTravel" style="width: 100%">
             </div>
           </div>
 
         </div>
         <script>
             var query = location.search.slice(1);
-            var partes = query.split('&');
+            var parametros = query.split('&');
             var data = {};
-            partes.forEach(function (parte) {
+            parametros.forEach(function (parte) {
                 var chaveValor = parte.split('=');
                 var chave = chaveValor[0];
                 var valor = chaveValor[1];
@@ -196,5 +207,6 @@
             console.log(data.travel);
             document.getElementById("travelId").value = data.travel;
             </script>
+
 
 <?php require_once './src/pages/footers/index.php'?>

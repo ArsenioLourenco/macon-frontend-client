@@ -36,7 +36,7 @@ class GenerateTicket {
             <h1 style="
                 text-align: center; 
                 color: #172b4d; 
-                font-size: 25; 
+                font-size: 15; 
                 font-family: Arial, Helvetica, sans-serif;
                 padding-top: 10px;
                 ">
@@ -64,9 +64,10 @@ class GenerateTicket {
                     <strong>Codigo de Reserva: </strong> {$reservationCode}
                 </div>
             </div>
-            <div  style="padding-bottom: 1px; font-size: 10px; margin-left: 500px">
+            <div  style="padding-bottom: 1px; font-size: 10px; margin-left: 900px; padding-top: 300px">
                 {$date}
             </div>
+            
         HTML;
 
         $this->dompdf->loadHtml($htmlData);

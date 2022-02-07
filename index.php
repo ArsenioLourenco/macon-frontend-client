@@ -161,7 +161,7 @@
                         </div>
                     </div>
                     </p>
-                    <img src="./assets/svg/home.svg" alt="">
+                    <img src="./assets/gif/agendTravel.gif" alt="">
                     <div class="text-center p-3">
                         <h2 id="principalTitle">Agende a sua Viagem</h2>
                         <p id="descTitle1">Agende as suas viajens a partir da nossa plataforma <br>

@@ -1,30 +1,55 @@
 // Selecionar a consulta com Id 
-const consultTravelBtn = $("#searchTravel"), 
+const consultTravelBtn = $("#searchTravel"),
   searchResultTable = $("#searchResultTbl"),
   countryList = $("#country"),
   provinceListSource = $("#source"),
-  provinceListDestination = $("#destination");
-baseURL = 'http://192.168.40.32:6800/'
+  provinceListDestination = $("#destination"),
+  agendTravelForm = $('#agendTravelForm'),
+  baseURL = 'http://192.168.40.32:6800/';
 
 // Bind events 
 consultTravelBtn.on("click", handleConsultTravel);
 countryList.on('change', handleCountryListChange);
 
-// Agend Travel Submition
-$('#agendTravelForm').on('submit', agendTravel);
+// Agend Travel Submition 
+agendTravelForm.on('submit', agendTravel);
 
 function agendTravel(event) {
   event.preventDefault();
 
+  var consultingModal = new bootstrap.Modal(document.querySelector('#consultingModal'));
+  const consultingModalDataTable = $('#consultingModalDataTable');
+  const cModalThead = consultingModalDataTable.find('thead tr');
+  const cModalTbody = consultingModalDataTable.find('tbody tr');
+
+  // Limpar informações no cabeçalho e no corpo da tabela
+  cModalThead.html('');
+  cModalTbody.html('');
+
+  // Listar informações do Formulario de Agendamento de Viagens excluindo campos ocultos
+  $(this).find('input:not([type="hidden"])').each(function (index, inputElement) {
+    const tableColumnName = $(inputElement).attr('data-table-column-name');
+    const inputValue = $(inputElement).val();
+
+    cModalThead.append(`<th>${tableColumnName}</th>`);
+    cModalTbody.append(`<td>${inputValue}</td>`);
+  });
+
+  consultingModal.show();
+}
+//Função para guardar dados
+$('#guardar').on('click', guardarTravel);
+
+function guardarTravel(event) {
+  event.preventDefault();
   $.ajax({
     type: "POST",
     url: "http://192.168.40.32:6800/client/travel/agend",
-    data: $(this).serialize(),
+    data: $(agendTravelForm).serialize(),
     dataType: "JSON",
     success: function (response) {
 
       const { message, success } = response;
-
       console.log('DADOS Agendamento: ', message);
 
       console.log(message, success);
@@ -32,14 +57,13 @@ function agendTravel(event) {
       const [seats, route, departureDate, price, reservationCode] = message.split('.') ?? window.alert('Failed');
 
       var d = new Date();
-      var strDate = d.getDate() + "/" + + (d.getMonth() + 1) + "/" + d.getFullYear() ;
+      var strDate = d.getDate() + "/" + + (d.getMonth() + 1) + "/" + d.getFullYear();
 
-      console.log('Date: ',strDate);
+      console.log('Date: ', strDate);
 
       window.open(
         `http://localhost:3000/generatepdf.php?seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}&date=${strDate}`,
         '_blank'
-
       )
 
     },
@@ -62,7 +86,7 @@ function agendTravelPayment(event) {
   $.ajax({
     type: "POST",
     url: "http://192.168.40.32:6800/client/travel/agend",
-    data: $(this).serialize(),
+    data: $(agendTravelForm).serialize(),
     dataType: "JSON",
     success: function (response) {
 
@@ -75,24 +99,24 @@ function agendTravelPayment(event) {
       const [seats, route, departureDate, price, reservationCode] = message.split('.') ?? window.alert('Failed');
 
       const [, valor] = price.split(':');
-        const [, custo] = valor.split(' ');
-        const [, ids] = Agendamento.split(':');
-        const [, agendIds] = ids.split(' ');
+      const [, custo] = valor.split(' ');
+      // const [, ids] = Agendamento.split(':');
+      // const [, agendIds] = ids.split(' ');
 
-        var text = "";
-        var possible = "abcde0123456789";
-        for (var i = 0; i < 15; i++){
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
+      var text = "";
+      var possible = "abcde0123456789";
+      for (var i = 0; i < 15; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+      }
 
       var d = new Date();
       var strDate = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
 
-      console.log('Date: ',strDate);
+      console.log('Date: ', strDate);
 
       window.open(
-        `http://localhost:3000/pagamento.php?travel=${data.travel}&price=${custo}&reference=${text}&agendamento=${agendIds}&seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}`,
-        
+        `http://localhost:3000/pagamento.php?travel=${data.travel}&price=${custo}&reference=${text}&seats=${seats}&route=${route}&departureDate=${departureDate}&price=${price}&reservationCode=${reservationCode}`, '_blank',
+
       );
 
     },
@@ -118,7 +142,7 @@ function travelPayment(event) {
   $.ajax({
     type: "POST",
     url: "http://192.168.40.32:6800/payment/create",
-    data: $(this).serialize(),
+    data: $(agendTravelForm).serialize(),
     dataType: "JSON",
     success: function (response) {
 
@@ -209,7 +233,6 @@ function handleConsultTravel(event) {
       });
     },
     error: function (response) {
-      //  To do:Retornar uma mensagem de Não Temos Essa Viagem Agendada. 
       console.log("Error: ", response);
       exibeMensagem('Voltar a Pesquisa', 'Pesquisa não Encontrada');
     },
@@ -413,5 +436,5 @@ function verifySelectedTravel() {
 appendCountryList();
 verifySelectedTravel();
 consult();
-
-
+guardarTravel();
+agendTravelPayment();
